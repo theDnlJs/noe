@@ -7,10 +7,31 @@
     "start": "next start"
   },
   "dependencies": {
-    "firebase": "7.17.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@reduxjs/toolkit": "^1.4.0",
+    "@webcomponents/webcomponentsjs": "^2.4.4",
+    "clsx": "^1.1.1",
+    "faunadb": "^3.0.1",
+    "firebase": "^7.17.0",
+    "jss-rtl": "^0.3.0",
+    "lottery-wheel": "^2.4.1",
     "next": "latest",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-animated-css": "^1.2.1",
+    "react-dom": "^16.13.0",
+    "react-hook-form": "^6.5.3",
+    "react-redux": "^7.2.1",
+    "react-redux-firebase": "^3.7.0",
+    "react-scratchcard": "^1.1.2",
+    "react-spring": "^8.0.27",
+    "redux-firebase": "^0.3.3",
+    "redux-firestore": "^0.13.0",
+    "redux-thunk": "^2.3.0",
+    "scratchcard-js": "^1.4.9",
+    "swr": "^0.3.1",
+    "web-component-essentials": "0.0.4"
   },
   "license": "MIT"
 }
