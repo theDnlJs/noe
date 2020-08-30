@@ -11,22 +11,7 @@ function PrizesForm() {
   const [checked, setChecked] = React.useState(true);
   const onSubmit = async (data) => {
     console.log(data);
-    try {
-      const res = await fetch("/api/leads/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (res.status === 200) {
-        dispatch(increment());
-      } else {
-        throw new Error(await res.text());
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    
   };
 
   console.log(errors.name);
@@ -53,19 +38,16 @@ function PrizesForm() {
             }}
             inputRef={register({
               required: true,
-              max: 20,
-              min: 2,
-              maxLength: 20,
             })}
             id="outlined-basic"
-            label="שם מלא"
+            label="שם"
             variant="outlined"
           />
-          {errors.Prizename ? (
+          {/* {errors.Prizename ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
-          )}
+          )} */}
           <TextField
             name="prizeDesc"
             style={{
@@ -81,21 +63,19 @@ function PrizesForm() {
             }}
             inputRef={register({
               required: true,
-              max: 20,
-              min: 2,
-              maxLength: 20,
             })}
             id="outlined-basic"
-            label="שם מלא"
+            label="תיאור"
             variant="outlined"
           />
-          {errors.prizeDesc ? (
+          {/* {errors.prizeDesc ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
-          )}
+          )} */}
 
           <TextField
+          type="number"
             name="prizeChance"
             style={{
               backgroundColor: "white",
@@ -110,21 +90,19 @@ function PrizesForm() {
             }}
             inputRef={register({
               required: true,
-              max: 20,
-              min: 2,
-              maxLength: 20,
             })}
             id="outlined-basic"
-            label="שם מלא"
+            label="סיכוי"
             variant="outlined"
           />
-          {errors.prizeChance ? (
+          {/* {errors.prizeChance ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
-          )}
+          )} */}
 
           <TextField
+            type="number"
             name="prizeQuantity"
             style={{
               backgroundColor: "white",
@@ -139,19 +117,16 @@ function PrizesForm() {
             }}
             inputRef={register({
               required: true,
-              max: 20,
-              min: 2,
-              maxLength: 20,
             })}
             id="outlined-basic"
-            label="שם מלא"
+            label="כמות"
             variant="outlined"
           />
-          {errors.prizeQuantity ? (
+          {/* {errors.prizeQuantity ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
-          )}
+          )} */}
           <TextField
             name="prizeImageUrl"
             style={{
@@ -167,107 +142,23 @@ function PrizesForm() {
             }}
             inputRef={register({
               required: true,
-              max: 20,
-              min: 2,
-              maxLength: 20,
             })}
             id="outlined-basic"
-            label="שם מלא"
+            label="תמונה"
             variant="outlined"
           />
-          {errors.prizeImageUrl ? (
+          {/* {errors.prizeImageUrl ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
-          )}
-          <TextField
-            style={{
-              color: "white",
-              fontWeight: "300",
-              fontFamily: "Rubik",
-              backgroundColor: "white",
-              borderRadius: "6px",
-              marginTop: "1em",
-              width: "100%",
-            }}
-            name="phone"
-            inputRef={register({
-              required: true,
-              pattern: {
-                value: /^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|[5]{1}\d{8})$/i,
-                message: "נא להזין מספר טלפון תיקני",
-              },
-            })}
-            id="outlined-basic"
-            label="מספר נייד"
-            variant="outlined"
-          />
-          {errors.phone ? (
-            <span className="error-message">אנא הזן מספר טלפון תיקני</span>
-          ) : (
-            <span className="error-message"></span>
-          )}
-          <TextField
-            name="name"
-            style={{
-              backgroundColor: "white",
-              borderRadius: "6px",
-              border: "none",
-              marginTop: "0.75rem",
-              color: "white",
-              fontWeight: "300",
-              fontFamily: "Rubik",
-              width: "100%",
-              error: errors.name,
-            }}
-            inputRef={register({
-              required: true,
-              max: 20,
-              min: 2,
-              maxLength: 20,
-            })}
-            id="outlined-basic"
-            label="שם מלא"
-            variant="outlined"
-          />
-          {errors.name ? (
-            <span className="error-message">יש להזין שם מלא</span>
-          ) : (
-            <span className="error-message"></span>
-          )}
-          <TextField
-            style={{
-              color: "white",
-              fontWeight: "300",
-              fontFamily: "Rubik",
-              backgroundColor: "white",
-              borderRadius: "6px",
-              marginTop: "1em",
-              width: "100%",
-            }}
-            name="phone"
-            inputRef={register({
-              required: true,
-              pattern: {
-                value: /^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|[5]{1}\d{8})$/i,
-                message: "נא להזין מספר טלפון תיקני",
-              },
-            })}
-            id="outlined-basic"
-            label="מספר נייד"
-            variant="outlined"
-          />
-          {errors.phone ? (
-            <span className="error-message">אנא הזן מספר טלפון תיקני</span>
-          ) : (
-            <span className="error-message"></span>
-          )}
+          )} */}
+      
         </main>
         <div style={{ display:'flex' }}>
           <Button
             type="submit"
             variant="contained"
-            color="primary"
+            color="secondary"
             disabled={!!!checked}
             style={{
               margin: "0 auto",

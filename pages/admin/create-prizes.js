@@ -56,9 +56,7 @@ function CreatePrizes() {
             justify-self: center;
             margin: 0 auto;
           }
-          .overlay {
-   
-          }
+    
           .hand-img {
             width: 87.5%;
             margin-top: 6vh;
