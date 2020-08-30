@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-
 
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
@@ -9,23 +8,24 @@ import Typography from "@material-ui/core/Typography";
 import PrizesForm from "../../components/prizesForm";
 
 function CreatePrizes() {
+
   return (
     <Fade in timeout={500}>
       <div className="container">
-          <div>
-            <Typography variant="h5">
-              <span
-                style={{
-                  color: "white",
-                  fontWeight: "300",
-                  fontFamily: "Rubik",
-                }}
-              >
-             יצירת פרס חדש
-              </span>
-            </Typography>
-          </div>
-          <PrizesForm />
+        <div>
+          <Typography variant="h5">
+            <span
+              style={{
+                color: "white",
+                fontWeight: "300",
+                fontFamily: "Rubik",
+              }}
+            >
+              יצירת פרס חדש
+            </span>
+          </Typography>
+        </div>
+        <PrizesForm />
         {/* styles */}
         <style jsx>{`
           h1 {
@@ -56,7 +56,7 @@ function CreatePrizes() {
             justify-self: center;
             margin: 0 auto;
           }
-    
+
           .hand-img {
             width: 87.5%;
             margin-top: 6vh;

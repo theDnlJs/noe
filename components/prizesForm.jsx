@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -11,7 +11,6 @@ function PrizesForm() {
   const [checked, setChecked] = React.useState(true);
   const onSubmit = async (data) => {
     console.log(data);
-    
   };
 
   console.log(errors.name);
@@ -19,10 +18,29 @@ function PrizesForm() {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
+  const [images, setImages] = useState("");
+  const [loading, setLoading] = useState(false);
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "mainstream");
+    setLoading(true);
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/ada-solutions/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+    const file = await res.json();
+    setImages(file.secure_url);
+    setLoading(false);
+  };
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <main style={{ marginTop:'10vh' }}>
+        <main style={{ marginTop: "10vh" }}>
           <TextField
             name="Prizename"
             style={{
@@ -75,7 +93,7 @@ function PrizesForm() {
           )} */}
 
           <TextField
-          type="number"
+            type="number"
             name="prizeChance"
             style={{
               backgroundColor: "white",
@@ -128,6 +146,10 @@ function PrizesForm() {
             <span className="error-message"></span>
           )} */}
           <TextField
+            type="file"
+            name="file"
+            placeholder="upload Image"
+            onChange={uploadImage}
             name="prizeImageUrl"
             style={{
               backgroundColor: "white",
@@ -147,14 +169,18 @@ function PrizesForm() {
             label="תמונה"
             variant="outlined"
           />
+          {loading ? (
+            <h3>רגע אחי, טוען...</h3>
+          ) : (
+            <img style={{ width: "320px" }} src={images} />
+          )}
           {/* {errors.prizeImageUrl ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
           )} */}
-      
         </main>
-        <div style={{ display:'flex' }}>
+        <div style={{ display: "flex" }}>
           <Button
             type="submit"
             variant="contained"
