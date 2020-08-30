@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from 'next/router'
 
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -14,16 +15,42 @@ import { increment } from "../lib/slices/gameSlice";
 
 
 function LeadForm() {
+  const router = useRouter()
   const { register, handleSubmit, watch, errors } = useForm();
   const dispatch = useDispatch();
   
   const [checked, setChecked] = React.useState(true);
-
-  const onSubmit = (data) => {
-    console.log(data);
-    dispatch(increment());
-
+  const redirectTo = path => {
+    console.log('in func')
+    return router.push(`${path}`, `${path}`)
   }
+  const onSubmit = async (data) => {
+    try {
+      const res = await fetch('/api/leads/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+ 
+      if (res.status === 200) {
+        dispatch(increment());
+      } 
+      if (res.status === 401){
+        router.push('/already-played',)
+      }
+    } catch (error) {
+      if (error) {
+        console.log({error}, 'check')
+      }
+   
+      console.error({error}, 'error');
+    }
+  }
+    
+
+
   console.log(errors.name);
   console.log(watch("example"));
   const handleChange = (event) => {
