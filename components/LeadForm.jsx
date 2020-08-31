@@ -33,8 +33,8 @@ function LeadForm() {
       });
  
       if (res.status === 200) {
-        dispatch(setLeadState(data))
         dispatch(increment());
+        dispatch(setLeadState(res))
       } 
       if (res.status === 401){
         router.push('/already-played',)
