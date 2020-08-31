@@ -11,9 +11,6 @@ const fetcher = (url) => fetch(url).then((r) => r.json());
 export default function Home() {
   const { data, error } = useSWR('/api/leads', fetcher);
   if (error) return <div>failed to load</div>;
-  console.log('====================================');
-  console.log(data);
-  console.log('====================================');
   // Our custom hook to get context values
   const size = useWindowSize();
 

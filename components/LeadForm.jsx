@@ -22,28 +22,20 @@ function LeadForm() {
  
   const onSubmit = async (data) => {
     try {
-      await axios.post('/api/leads/create', data)
+      await axios.get('/api/leads/played', data)
       .then(response => {
-        console.log('====================================');
-        console.log(response, 'response');
-        console.log('====================================');
+
  
         if (response.status === 200) {
-          console.log('====================================');
-          console.log(response, 'data');
-          console.log('====================================');
-          dispatch(setLeadState(response.data))
+          dispatch(setLeadState(data))
           dispatch(increment());
         } 
 
       }).
       catch( e => {
-        console.log(e.response?.status, 'eeee');
+
         let resStatus = e.response?.status;
         if (resStatus === 401){
-          console.log('====================================');
-          console.log('401');
-          console.log('====================================');
           router.push('/already-played', '/already-played')
         }
         
@@ -66,10 +58,6 @@ function LeadForm() {
     }
   }
     
-
-
-  console.log(errors.name);
-  console.log(watch("example"));
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };

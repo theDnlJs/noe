@@ -10,7 +10,7 @@ function ScratchTicket() {
     (state) => state.game?.prize?.data?.prizeImageUrl
   );
 
-  console.log(prizeImageUrl);
+
   const settings = {
     width: 320,
     height: 441,
@@ -20,7 +20,7 @@ function ScratchTicket() {
       dispatch(giveAway({ phone: {
         phone: 'test'
       } }));
-      console.log("send sms and register the prize to firebase db");
+      // console.log("send sms and register the prize to firebase db");
     }
   };
   return (

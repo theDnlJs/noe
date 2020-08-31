@@ -28,7 +28,7 @@ function PrizesForm() {
     } catch (error) {
       console.error(error);
     }
-    console.log(data);
+
   };
 
   console.log(errors.name);

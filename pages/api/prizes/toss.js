@@ -5,9 +5,6 @@ import { ListItemSecondaryAction } from '@material-ui/core';
 
 export default async (req, res) => {
     const toss = Math.floor(Math.random() * 10000) + 1 
-    console.log('====================================');
-    console.log(toss);
-    console.log('====================================');
   try {
     const prizes = await serverClient.query(
       q.Map(
@@ -34,9 +31,6 @@ export default async (req, res) => {
       }
     });
     const tossed = shaffled[Math.floor(Math.random() * shaffled.length)];
-    console.log('====================================');
-    console.log(tossed, 'tossed');
-    console.log('====================================');
     // ok
     res.status(200).json(tossed);
   } catch (e) {
