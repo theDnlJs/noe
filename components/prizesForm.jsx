@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -9,7 +10,24 @@ function PrizesForm() {
   const { register, handleSubmit, watch, errors } = useForm();
   const dispatch = useDispatch();
   const [checked, setChecked] = React.useState(true);
+  const router = useRouter();
   const onSubmit = async (data) => {
+    try {
+      const res = await fetch("/api/prizes/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.status === 200) {
+        router.push("/admin", "/admin");
+      } else {
+        throw new Error(await res.text());
+      }
+    } catch (error) {
+      console.error(error);
+    }
     console.log(data);
   };
 
@@ -42,7 +60,7 @@ function PrizesForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <main style={{ marginTop: "10vh" }}>
           <TextField
-            name="Prizename"
+            name="PrizeName"
             style={{
               backgroundColor: "white",
               borderRadius: "6px",
@@ -146,11 +164,18 @@ function PrizesForm() {
             <span className="error-message"></span>
           )} */}
           <TextField
+            style={{ display: "none" }}
+            name="prizeImageUrl"
+            value={images}
+            inputRef={register({
+              required: true,
+            })}
+          />
+          <TextField
             type="file"
             name="file"
             placeholder="upload Image"
             onChange={uploadImage}
-            name="prizeImageUrl"
             style={{
               backgroundColor: "white",
               borderRadius: "6px",
@@ -162,9 +187,6 @@ function PrizesForm() {
               width: "100%",
               error: errors.prizeImageUrl,
             }}
-            inputRef={register({
-              required: true,
-            })}
             id="outlined-basic"
             label="תמונה"
             variant="outlined"

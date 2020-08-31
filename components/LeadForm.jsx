@@ -2,16 +2,14 @@ import React from "react";
 import { useRouter } from 'next/router'
 
 import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
 import TextField from "@material-ui/core/TextField";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+
 import Checkbox from "@material-ui/core/Checkbox";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useForm } from "react-hook-form";
 
-import { increment } from "../lib/slices/gameSlice";
+import { increment, setLeadState } from "../lib/slices/gameSlice";
 
 
 function LeadForm() {
@@ -35,6 +33,7 @@ function LeadForm() {
       });
  
       if (res.status === 200) {
+        dispatch(setLeadState(data))
         dispatch(increment());
       } 
       if (res.status === 401){
