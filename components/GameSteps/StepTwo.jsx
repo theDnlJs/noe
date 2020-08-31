@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+import useSWR from 'swr';
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,10 +10,19 @@ import Typography from "@material-ui/core/Typography";
 
 import LeadForm from "../LeadForm";
 
-import { increment } from "../../lib/slices/gameSlice";
+import { increment,setPrzie } from "../../lib/slices/gameSlice";
 
+const fetcher = (url) => fetch(url).then((r) => r.json());
 function StepTwo() {
   const dispatch = useDispatch();
+  const { data, error } = useSWR('/api/prizes/toss', fetcher);
+  useEffect(() => {
+    console.log('====================================');
+    console.log(data, 'data');
+    console.log('====================================');
+
+   dispatch(setPrzie(data));
+  }, [data])
 
   function dispatchIncrement() {
     dispatch(increment());

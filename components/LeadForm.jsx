@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios'
 import { useRouter } from 'next/router'
 
 import Button from "@material-ui/core/Button";
@@ -18,30 +19,44 @@ function LeadForm() {
   const dispatch = useDispatch();
   
   const [checked, setChecked] = React.useState(true);
-  const redirectTo = path => {
-    console.log('in func')
-    return router.push(`${path}`, `${path}`)
-  }
+ 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch('/api/leads/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      await axios.post('/api/leads/create', data)
+      .then(response => {
+        console.log('====================================');
+        console.log(response, 'response');
+        console.log('====================================');
  
-      if (res.status === 200) {
-        console.log('====================================');
-        console.log(res, 'data');
-        console.log('====================================');
-        dispatch(setLeadState(data))
-        dispatch(increment());
-      } 
-      if (res.status === 401){
-        router.push('/already-played',)
-      }
+        if (response.status === 200) {
+          console.log('====================================');
+          console.log(response, 'data');
+          console.log('====================================');
+          dispatch(setLeadState(response.data))
+          dispatch(increment());
+        } 
+
+      }).
+      catch( e => {
+        console.log(e.response?.status, 'eeee');
+        let resStatus = e.response?.status;
+        if (resStatus === 401){
+          console.log('====================================');
+          console.log('401');
+          console.log('====================================');
+          router.push('/already-played', '/already-played')
+        }
+        
+      });
+      // const res = await fetch('/api/leads/create', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(data),
+      // });
+ 
+    
     } catch (error) {
       if (error) {
         console.log({error}, 'check')

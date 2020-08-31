@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import useSWR from 'swr';
 import { useDispatch, useSelector } from "react-redux";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
@@ -8,18 +7,8 @@ import { Animated } from "react-animated-css";
 import Typography from "@material-ui/core/Typography";
 import { increment } from "../../lib/slices/gameSlice";
 import ScratchTicket from "../ScratchTicket";
-import { setPrzie } from '../../lib/slices/gameSlice'
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
-function StepThree() {
-  const { data, error } = useSWR('/api/prizes/toss', fetcher);
-  useEffect(() => {
-    console.log('====================================');
-    console.log(data, 'data');
-    console.log('====================================');
 
-   dispatch(setPrzie(data));
-  }, [data])
   const dispatch = useDispatch();
   function dispatchIncrement() {
     dispatch(increment());
