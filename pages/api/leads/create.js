@@ -14,16 +14,30 @@ export default async (req, res) => {
         return res.status(401).json({ exists: true })
       }
     }).
-    catch(e => console.log(e))
-    await serverClient.query(
-      q.Create(q.Collection("leads"), {
-        data: {
-          name,
-          phone,
-        },
-      })
-    );
-    res.status(200).end();
+    catch(e => console.log(e));
+    serverClient.query(
+      q.Create(
+        q.Collection('leads'),
+        {   data: {
+                  name,
+                  phone,
+                },},
+      )
+    )
+    .then((rett) => {
+      console.log(rett)
+      res.status(200).json({data: rett})
+    });
+
+  //   await serverClient.query(
+  //     q.Create(q.Collection("leads"), {
+  //       data: {
+  //         name,
+  //         phone,
+  //       },
+  //     })
+  //   );
+  //   res.status(200).end();
   } catch (e) {
     if (e.message === "instance not unique") {
       return res.status(401).json(e);
