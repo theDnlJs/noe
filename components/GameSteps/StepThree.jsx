@@ -59,7 +59,8 @@ function StepThree() {
         .container {
           background: url("images/yellow-bg.png");
           background-size: cover;
-          min-height: 100vh;
+          height: 100%;
+          overflow: 'hidden';
           width: 100%;
           padding: 0;
         }

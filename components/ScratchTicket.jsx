@@ -6,9 +6,7 @@ import { finalAction } from "../lib/slices/gameSlice";
 function ScratchTicket() {
   const dispatch = useDispatch();
   const prizeOwn = useSelector((state) => state.game?.prize);
-
   const leadPlayed = useSelector((state) => state.game?.lead);
-
   const settings = {
     width: 320,
     height: 441,
@@ -16,8 +14,6 @@ function ScratchTicket() {
     finishPercent: 50,
     onComplete: () => {
       dispatch(finalAction({ leadPlayed, prizeOwn }));
-
-      // console.log("send sms and register the prize to firebase db");
     },
   };
   return (
@@ -28,6 +24,7 @@ function ScratchTicket() {
         alignItems: "center",
         alignContent: "center",
         marginTop: "3.5vh",
+        overflow: 'hidden',
       }}
     >
       <ScratchCard {...settings}>

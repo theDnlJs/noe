@@ -10,9 +10,9 @@ export default function Home() {
 
   }, []);
   return (
-      <div className="container">
+      <div  className="container">
         <Head>
-          <title>Next.js w/ Firebase Client-Side</title>
+          <title>MAINSTREAM</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         {size.width > 780 && <NotMobileScreen />}
