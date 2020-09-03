@@ -22,42 +22,26 @@ function LeadForm() {
  
   const onSubmit = async (data) => {
     try {
-      await axios.get('/api/leads/played', data)
+      await axios.get('/api/check', data)
       .then(response => {
-
- 
         if (response.status === 200) {
           dispatch(setLeadState(data))
           dispatch(increment());
         } 
-
       }).
       catch( e => {
-
         let resStatus = e.response?.status;
         if (resStatus === 401){
           router.push('/already-played', '/already-played')
         }
-        
       });
-      // const res = await fetch('/api/leads/create', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(data),
-      // });
- 
-    
     } catch (error) {
       if (error) {
         console.log({error}, 'check')
       }
-   
       console.error({error}, 'error');
     }
   }
-    
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
