@@ -12,11 +12,11 @@ const PrizeSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter Name"],
   },
-  imageUrl: {
+  imgUrl: {
     type: String,
     required: [true, "Please enter Name"],
   },
-  cahnces: {
+  chances: {
     type: Number,
     required: [true, "Please enter Name"],
   },
@@ -28,6 +28,9 @@ const PrizeSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Please enter quantity"],
   },
+  leads: {
+    type: Array,
+  }
 });
 
 export default mongoose.models.Prize || mongoose.model("Prize", PrizeSchema);

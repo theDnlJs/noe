@@ -3,17 +3,9 @@ import { useEffect } from "react";
 import { useWindowSize } from "../src/hooks/useWindowSize";
 import GameScreen from "../screens/GameScreen";
 import NotMobileScreen from "../screens/NotMobileScreen";
-import useSWR from 'swr';
-
-const fetcher = (url) => fetch(url).then((r) => r.json());
-
 
 export default function Home() {
-  const { data, error } = useSWR('/api/leads', fetcher);
-  if (error) return <div>failed to load</div>;
-  // Our custom hook to get context values
   const size = useWindowSize();
-
   useEffect(() => {
 
   }, []);

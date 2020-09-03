@@ -1,15 +1,13 @@
 import React from "react";
 import ScratchCard from "react-scratchcard";
 import { useSelector, useDispatch } from "react-redux";
-import { giveAway } from "../lib/slices/gameSlice";
-
+import { finalAction } from "../lib/slices/gameSlice";
 
 function ScratchTicket() {
   const dispatch = useDispatch();
-  const prizeImageUrl = useSelector(
-    (state) => state.game?.prize?.data?.prizeImageUrl
-  );
+  const prizeOwn = useSelector((state) => state.game?.prize);
 
+  const leadPlayed = useSelector((state) => state.game?.lead);
 
   const settings = {
     width: 320,
@@ -17,11 +15,10 @@ function ScratchTicket() {
     image: "images/scratch.png",
     finishPercent: 50,
     onComplete: () => {
-      dispatch(giveAway({ phone: {
-        phone: 'test'
-      } }));
+      dispatch(finalAction({ leadPlayed, prizeOwn }));
+
       // console.log("send sms and register the prize to firebase db");
-    }
+    },
   };
   return (
     <div
@@ -34,9 +31,7 @@ function ScratchTicket() {
       }}
     >
       <ScratchCard {...settings}>
-        {prizeImageUrl && (
-          <img style={{ width: "320px" }} src={prizeImageUrl} />
-        )}
+        {prizeOwn && <img style={{ width: "320px" }} src={prizeOwn.imgUrl} />}
       </ScratchCard>
     </div>
   );

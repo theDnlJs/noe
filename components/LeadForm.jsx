@@ -9,17 +9,13 @@ import Checkbox from "@material-ui/core/Checkbox";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useForm } from "react-hook-form";
-
 import { increment, setLeadState } from "../lib/slices/gameSlice";
-
 
 function LeadForm() {
   const router = useRouter()
   const { register, handleSubmit, watch, errors } = useForm();
   const dispatch = useDispatch();
-  
   const [checked, setChecked] = React.useState(true);
- 
   const onSubmit = async (data) => {
     try {
       await axios.get('/api/check', data)

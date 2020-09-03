@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { increment } from "../lib/slices/gameSlice";
+import axios from "axios";
 function PrizesForm() {
   const { register, handleSubmit, watch, errors } = useForm();
   const dispatch = useDispatch();
@@ -13,22 +13,17 @@ function PrizesForm() {
   const router = useRouter();
   const onSubmit = async (data) => {
     try {
-      const res = await fetch("/api/prizes/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await axios.post("/api/create-prize", data )
+      console.log(data)
       if (res.status === 200) {
-        router.push("/admin", "/admin");
+        alert('success')
       } else {
         throw new Error(await res.text());
       }
     } catch (error) {
       console.error(error);
+      alert('error')
     }
-
   };
 
   console.log(errors.name);
@@ -60,7 +55,7 @@ function PrizesForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <main style={{ marginTop: "10vh" }}>
           <TextField
-            name="PrizeName"
+            name="name"
             style={{
               backgroundColor: "white",
               borderRadius: "6px",
@@ -70,7 +65,6 @@ function PrizesForm() {
               fontWeight: "300",
               fontFamily: "Rubik",
               width: "100%",
-              error: errors.Prizename,
             }}
             inputRef={register({
               required: true,
@@ -85,7 +79,7 @@ function PrizesForm() {
             <span className="error-message"></span>
           )} */}
           <TextField
-            name="prizeDesc"
+            name="desc"
             style={{
               backgroundColor: "white",
               borderRadius: "6px",
@@ -112,7 +106,7 @@ function PrizesForm() {
 
           <TextField
             type="number"
-            name="prizeChance"
+            name="chances"
             style={{
               backgroundColor: "white",
               borderRadius: "6px",
@@ -139,7 +133,7 @@ function PrizesForm() {
 
           <TextField
             type="number"
-            name="prizeQuantity"
+            name="quantity"
             style={{
               backgroundColor: "white",
               borderRadius: "6px",
@@ -165,7 +159,7 @@ function PrizesForm() {
           )} */}
           <TextField
             style={{ display: "none" }}
-            name="prizeImageUrl"
+            name="imgUrl"
             value={images}
             inputRef={register({
               required: true,

@@ -6,21 +6,25 @@ export default async function handler(req, res) {
   await dbConnect()
   switch (method) {
     case 'GET':
-      try {
-        const didPlayed = await Pet.findOne({ phone: req.body.phone }) /* find all the data in our database */
-        res.status(200).json({ success: false, data: pets })
-      } catch (error) {
-        res.status(400).json({ success: false })
-      }
+      Lead.findOne({ phone: req.body.phone }).then((leadFound) => {
+        if (!leadFound) {
+          res.status(200).json({ leadFound })
+        }
+        if (leadFound) {
+         res.status(400).json({leadFound}) 
+        }
+      }).catch((e)=>{
+        res.status(500).json({e})
+      })
       break
     case 'POST':
       try {
-        const pet = await Pet.create(
-          req.body
-        ) /* create a new model in the database */
-        res.status(201).json({ success: true, data: pet })
+        const { name, phone } = req.body;
+        const newLead = new Lead({ name, phone });
+        newLead.Save();
+        res.status(200).json({ newLead })        
       } catch (error) {
-        res.status(400).json({ success: false })
+        res.status(500).json({ error, message: 'something went worng'})
       }
       break
     default:

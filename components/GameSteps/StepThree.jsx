@@ -1,28 +1,35 @@
 import React, { useEffect } from "react";
-import useSWR from 'swr';
+import useSWR from "swr";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { useSpring, animated } from "react-spring";
 import { Animated } from "react-animated-css";
 import Typography from "@material-ui/core/Typography";
-import { increment } from "../../lib/slices/gameSlice";
+import {
+  increment,
+  setPrzie,
+  setTosstedState,
+} from "../../lib/slices/gameSlice";
 import ScratchTicket from "../ScratchTicket";
-import { setPrzie } from '../../lib/slices/gameSlice'
+import axios from "axios";
+import { useState } from "react";
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
 function StepThree() {
   const dispatch = useDispatch();
-  function dispatchIncrement() {
-    dispatch(increment());
-  }
+  const [tossted, setTossted] = useState({});
+  useEffect(() => {
+    dispatch(setTosstedState());
+  }, []);
   return (
     <div className="container">
       <Grid container>
         <Grid item xs={12}>
-          <div style={{ width: "100%" }}>
-            <ScratchTicket />
-          </div>
+          {tossted && (
+            <div style={{ width: "100%" }}>
+              <ScratchTicket tossted={tossted} />
+            </div>
+          )}
           <div
             style={{
               textAlign: "center",
