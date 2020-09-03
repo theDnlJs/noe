@@ -1,8 +1,8 @@
 {
   "build": {
     "env": {
-
-      "MONGODB_URI": "mongodb+srv://boss:hp3Z3h4pKyVc7PJ@cluster0.n3abt.mongodb.net/mainstream?retryWrites=true&w=majority"
+      "FIREBASE_API_KEY": "@firebase-api-key",
+      "MONGODB_URI": "@mongodb_uri"
 
     }
   }
