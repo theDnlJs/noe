@@ -14,7 +14,6 @@ import {
 import ScratchTicket from "../ScratchTicket";
 import axios from "axios";
 import { useState } from "react";
-
 function StepThree() {
   const dispatch = useDispatch();
   const [tossted, setTossted] = useState({});
@@ -26,7 +25,7 @@ function StepThree() {
       <Grid container>
         <Grid item xs={12}>
           {tossted && (
-            <div style={{ width: "100%" }}>
+            <div style={{ position: 'absolute' }}>
               <ScratchTicket tossted={tossted} />
             </div>
           )}
@@ -59,7 +58,7 @@ function StepThree() {
         .container {
           background: url("images/yellow-bg.png");
           background-size: cover;
-          height: 100%;
+          min-height: 80vh;
           overflow: 'hidden';
           width: 100%;
           padding: 0;

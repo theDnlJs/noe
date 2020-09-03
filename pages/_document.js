@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
           <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
           <script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
         </Head>
-        <body dir="rtl">
+        <body dir="rtl" scroll="no">
           <Main />
           <NextScript />
         </body>
