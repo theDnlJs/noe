@@ -14,15 +14,7 @@ import { increment,setPrzie } from "../../lib/slices/gameSlice";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 function StepTwo() {
-  const dispatch = useDispatch();
-  const { data, error } = useSWR('/api/prizes/toss', fetcher);
-  useEffect(() => {
-    console.log('====================================');
-    console.log(data, 'data');
-    console.log('====================================');
-
-   dispatch(setPrzie(data));
-  }, [data])
+  const dispatch = useDispatch()
 
   function dispatchIncrement() {
     dispatch(increment());
