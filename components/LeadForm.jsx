@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
@@ -10,14 +10,17 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useForm } from "react-hook-form";
 import { increment, setLeadState } from "../lib/slices/gameSlice";
+import { useState } from "react";
 
 function LeadForm() {
   const router = useRouter()
   const { register, handleSubmit, watch, errors } = useForm();
   const dispatch = useDispatch();
   const [checked, setChecked] = React.useState(true);
+  const [fetching, setfetching] = useState(false)
   const onSubmit = async (data) => {
     try {
+      setfetching(true)
       await axios.post('/api/check', data)
       .then(response => {
         if (response.status === 200) {
@@ -119,7 +122,24 @@ function LeadForm() {
             </label>
           </div>
         </main>
-        <Button
+        {fetching && <Button
+          type="submit"
+          variant="contained"
+          color="default"
+          disabled={true}
+          style={{
+            color: "black",
+            minWidth: "70%",
+            marginTop: "7vh",
+            marginBottom: "10vh",
+            padding: "1rem",
+            fontSize: "2rem",
+            borderRadius: "20px",
+          }}
+        >
+          {`הפרס שלך מוגרל כעת`}
+        </Button>}
+        {!fetching && <Button
           type="submit"
           variant="contained"
           color="default"
@@ -135,7 +155,7 @@ function LeadForm() {
           }}
         >
           {`התחל לשחק>`}
-        </Button>
+        </Button>}
 
         <style jsx>{`
           .error-message {

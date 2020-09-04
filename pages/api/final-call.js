@@ -13,18 +13,20 @@ export default async function handler(req, res) {
   } = req;
   const { leadPlayed, prizeOwn } = data;
   const prizeId = prizeOwn._id;
-  const prizeDesc = prizeOwn.desc
+  const prizeDesc = prizeOwn.desc;
+  const prizeName = prizeOwn.name;
   switch (method) {
     case "POST":
       try {
         const newLead = await new Lead({
           name: leadPlayed.name,
           phone: leadPlayed.phone,
-          prize: prizeId,
+          prize: prizeName,
         });
         newLead.save().catch((e) => console.log(e));
         let doc = await  Prize.findOneAndUpdate({ _id: prizeId }, { $push: { "leads": newLead } , $inc: { quantity: -1 } });
-          const data = new FormData();
+        // send sms via shitty company  
+        const data = new FormData();
           data.append(
             "InforuXML",
             `<Inforu> <User>\n\n<Username>laba</Username>\n\n<Password>laba2536</Password> </User>\n<Content Type="sms">\n\n<Message>אהלן גבר, זכית ב${prizeDesc}</Message> </Content>\n<Recipients>\n\n<PhoneNumber>${newLead.phone}</PhoneNumber> </Recipients>\n<Settings>\n\n<Sender>MAINSTREAM</Sender> </Settings>\n\n</Inforu>`
