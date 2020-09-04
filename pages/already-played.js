@@ -1,13 +1,10 @@
-import React from 'react'
+import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
 
-
-
 function alreadPlayed() {
-
   return (
     <Fade in timeout={500}>
       <div className="container">
@@ -22,6 +19,17 @@ function alreadPlayed() {
                 }}
               >
                 היי גבר זה נראה שכבר שיחקת
+              </span>
+            </Typography>
+            <Typography variant="body1">
+              <span
+                style={{
+                  color: "white",
+                  fontWeight: "300",
+                  fontFamily: "Rubik",
+                }}
+              >
+                ניתן להשתתף בפעילות פעם אחת
               </span>
             </Typography>
             <Typography variant="body1">

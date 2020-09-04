@@ -33,6 +33,8 @@ export default async function handler(req, res) {
               method: "post",
               url: "http://api.inforu.co.il/SendMessageXml.ashx",
               headers: {
+                Cookie:
+                "FGTServer=9468952D795B117DAB0BA80749159D24806DBEE0B140EF469B7DB2DAFD7DD86E65D0E742CE1FCB",
                 ...data.getHeaders(),
               },
               data: data,
@@ -40,11 +42,12 @@ export default async function handler(req, res) {
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
+              res.status(200).json({ newLead, response.data });
+
             })
             .catch(function (error) {
               console.log(error);
             });
-        res.status(200).json({ newLead, doc });
       } catch (error) {
         res.status(400).json({ success: false, error });
       }
