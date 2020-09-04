@@ -33,8 +33,6 @@ export default async function handler(req, res) {
               method: "post",
               url: "http://api.inforu.co.il/SendMessageXml.ashx",
               headers: {
-                Cookie:
-                "FGTServer=9468952D795B117DAB0BA80749159D24806DBEE0B140EF469B7DB2DAFD7DD86E65D0E742CE1FCB",
                 ...data.getHeaders(),
               },
               data: data,
