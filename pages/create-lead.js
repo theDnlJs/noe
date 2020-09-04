@@ -1,5 +1,5 @@
-import dbConnect from "../../lib/dbConnect";
-import Lead from "../../models/Lead";
+import dbConnect from "../lib/dbConnect";
+import Lead from "../models/Lead";
 
 export default async function handler(req, res) {
   const {

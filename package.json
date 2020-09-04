@@ -21,6 +21,7 @@
     "form-data": "^3.0.0",
     "jss-rtl": "^0.3.0",
     "lottery-wheel": "^2.4.1",
+    "material-table": "^1.69.0",
     "mongoose": "^5.10.2",
     "next": "latest",
     "passport": "^0.4.1",

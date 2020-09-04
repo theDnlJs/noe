@@ -23,12 +23,7 @@ export default async function handler(req, res) {
           prize: prizeId,
         });
         newLead.save().catch((e) => console.log(e));
-        await Prize.update(
-          {
-            _id: prizeId,
-          },
-          { $push: { leads: leadPlayed } }
-          );
+        let doc = await  Prize.findOneAndUpdate({ _id: prizeId }, { $push: { "leads": newLead } , $inc: { quantity: -1 } });
           const data = new FormData();
           data.append(
             "InforuXML",
@@ -51,7 +46,7 @@ export default async function handler(req, res) {
             .catch(function (error) {
               console.log(error);
             });
-        res.status(200).json({ newLead });
+        res.status(200).json({ newLead, doc });
       } catch (error) {
         res.status(400).json({ success: false, error });
       }

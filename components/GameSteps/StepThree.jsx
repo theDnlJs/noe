@@ -25,7 +25,7 @@ function StepThree() {
       <Grid container>
         <Grid item xs={12}>
           {tossted && (
-            <div style={{    }}>
+            <div style={{     }}>
               <ScratchTicket tossted={tossted} />
             </div>
           )}
@@ -62,6 +62,7 @@ function StepThree() {
           overflow: 'hidden';
           width: 100%;
           padding: 0;
+          position: fixed
         }
         .concept {
           display: flex;
