@@ -42,7 +42,7 @@ export default async function handler(req, res) {
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
-              res.status(200).json({ newLead, response.data });
+              res.status(200).json({ newLeadagin });
 
             })
             .catch(function (error) {
