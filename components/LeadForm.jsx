@@ -27,7 +27,7 @@ function LeadForm() {
       }).
       catch( e => {
         let resStatus = e.response?.status;
-        if (resStatus === 401){
+        if (resStatus === 400){
           router.push('/already-played', '/already-played')
         }
       });
