@@ -37,7 +37,6 @@ function alreadPlayed() {
             </Typography>
           </div>
         </div>
-
         <Grid container>
           <Grid item xs={12}>
             <img className="hand-img" src="images/hand.png" />

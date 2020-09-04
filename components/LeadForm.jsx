@@ -91,6 +91,7 @@ function LeadForm() {
                 message: "נא להזין מספר טלפון תיקני",
               },
             })}
+            type="tel"
             id="outlined-basic"
             label="מספר נייד"
             variant="outlined"
