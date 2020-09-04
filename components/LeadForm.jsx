@@ -18,7 +18,7 @@ function LeadForm() {
   const [checked, setChecked] = React.useState(true);
   const onSubmit = async (data) => {
     try {
-      await axios.get('/api/check', data)
+      await axios.post('/api/check', data)
       .then(response => {
         if (response.status === 200) {
           dispatch(setLeadState(data))

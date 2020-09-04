@@ -24,7 +24,6 @@ function ScratchTicket() {
         alignItems: "center",
         alignContent: "center",
         marginTop: "3.5vh",
-        overflow: 'hidden',
       }}
     >
       <ScratchCard {...settings}>
