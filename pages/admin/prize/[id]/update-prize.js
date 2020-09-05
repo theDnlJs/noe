@@ -13,14 +13,12 @@ const fetcher = (url) =>
     .then((res) => res.json())
     .then((json) => json.data);
 
-const EditPrize = () => {
+const EditPrize = ({data = {}}) => {
   const { register, handleSubmit, watch, errors } = useForm();
   const [images, setImages] = useState("");
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState()
   const [error, setError] = useState()
   const router = useRouter();
-  const { id } = router.query;
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -320,5 +318,10 @@ const EditPrize = () => {
     </Fade>
   );
 };
+
+EditPrize.getInitialProps = async (ctx) => {
+  const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+  return { userAgent }
+}
 
 export default EditPrize;

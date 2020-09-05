@@ -1,9 +1,8 @@
 import MUIDataTable from "mui-datatables";
 import useRequest from "../../lib/hooks";
-import Switch from "@material-ui/core/Switch";
-import axios from "axios";
 import React from "react";
-import Moment from "react-moment";
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const columns = [
   {
@@ -35,11 +34,26 @@ const columns = [
     options: {
       filter: true,
       sort: true,
+      customBodyRender: (value, tableMeta, updateValue) => {
+        return (
+          <>
+            <img
+              alt={value}
+              style={{ width: "50px", height: "50px" }}
+              src={value}
+            />
+          </>
+        );
+      },
     },
   },
   {
     name: "quantity",
     label: "כמות",
+  },
+  {
+    name: "chances",
+    label: "סיכוי",
   },
 ];
 
@@ -47,13 +61,20 @@ const prizeTable = () => {
   const { data } = useRequest({
     url: "/api/prizes",
   });
+  const router = useRouter()
+
   console.log("====================================");
   console.log(data, "lead table");
   console.log("====================================");
   const options = {
-    selectableRows: "multiple",
+    selectableRows: "single",
+    onRowClick: (rowData, rowMeta, rowExpanded) => {
+      console.log('====================================');
+      console.log(rowData, rowMeta,rowExpanded);
+      console.log('====================================');
+      router.push(`/admin/prize/${rowData[0]}/edit`)
+    }
   };
-
   return (
     <>
       <h1 style={{ textAlign: "center" }}>טבלת פרסים - חישגד מיינסטרים</h1>

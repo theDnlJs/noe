@@ -4,7 +4,6 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-import { increment } from "../lib/slices/gameSlice";
 import axios from "axios";
 function PrizesForm() {
   const { register, handleSubmit, watch, errors } = useForm();
