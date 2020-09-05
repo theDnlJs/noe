@@ -44,7 +44,7 @@ const columns = [
       customBodyRender: (value) => {
         return (
           <div>
-            <Moment locale="he_IL" format="d MMM hh:ss">
+            <Moment locale="he_IL" format="d MMM HH:ss">
                 {value}
             </Moment>
           </div>
