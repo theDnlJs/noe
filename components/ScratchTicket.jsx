@@ -11,7 +11,7 @@ function ScratchTicket() {
     width: 320,
     height: 441,
     image: "images/scratch.png",
-    finishPercent: 50,
+    finishPercent: 15,
     onComplete: () => {
       dispatch(finalAction({ leadPlayed, prizeOwn }));
     },
