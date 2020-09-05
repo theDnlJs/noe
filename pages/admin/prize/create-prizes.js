@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
 
-import PrizesForm from "../../../../components/prizesForm";
+import PrizesForm from "../../../components/prizesForm";
 
 function CreatePrizes() {
 
