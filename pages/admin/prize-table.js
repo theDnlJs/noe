@@ -2,7 +2,10 @@ import MUIDataTable from "mui-datatables";
 import useRequest from "../../lib/hooks";
 import React from "react";
 import { useRouter } from 'next/router'
-import Link from 'next/link'
+
+
+
+
 
 const columns = [
   {
@@ -50,10 +53,23 @@ const columns = [
   {
     name: "quantity",
     label: "כמות",
+
   },
   {
     name: "chances",
     label: "סיכוי",
+    options: {
+      customBodyRender: (value) => { 
+      return (
+      <div>
+        {value === 100 && 'שכיח'}
+        {value === 50 && 'נדיר'}
+        {value === 50 && 'נדיר מאוד'}
+
+      </div>
+      )
+      }
+    }
   },
 ];
 
