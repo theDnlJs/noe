@@ -64,12 +64,12 @@ const columns = [
             <Switch
               checked={value}
               onChange={async (e) => {
-                console.log(tableMeta.rowData[0], tableMeta);
+                console.log(tableMeta.rowData[0], !value);
                 updateValue(!value);
                 try {
-                  const updatedLead = await axios.post("/api/completedToggle", {
+                  const updatedLead = await axios.put("/api/completedToggle", {
                     id: tableMeta?.rowData[0],
-                    compoleted: !tableMeta?.rowData[4],
+                    compoleted: !value,
                   });
                   console.log("====================================");
                   console.log(updatedLead, { test: tableMeta?.rowData[4] });

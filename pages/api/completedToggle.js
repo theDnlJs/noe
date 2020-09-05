@@ -3,24 +3,26 @@ import Lead from "../../models/Lead";
 
 export default async function handler(req, res) {
   await dbConnect();
-  const {
-    method,
-    body,
-  } = req;
+  const { method, body } = req;
 
   switch (method) {
-    case "POST":
+    case "PUT":
       try {
-        const updatedLead = await Lead.findOneAndUpdate({_id: body.id}, { compoleted: body.compoleted } )
-        console.log('========================22222  ===========');
+        const updatedLead = await Lead.findOneAndUpdate(
+          { _id: body.id },
+          { compoleted: body.compoleted },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+        console.log("========================22222  ===========");
         console.log(updatedLead);
-        console.log('====================================');
+        console.log("====================================");
         res.status(200).json({ updatedLead, body });
-      } catch (error) { 
+      } catch (error) {
         res.status(400).json({ success: false, error, body });
       }
       break;
-      default:
-          break;
   }
 }
