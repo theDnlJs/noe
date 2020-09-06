@@ -7,11 +7,10 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 
-
 const Form = ({
   prizeForm: { name, desc, imgUrl = "", chances, quantity, smsTemplate },
 }) => {
-  const { register, handleSubmit, watch, errors } = useForm();  
+  const { register, handleSubmit, watch, errors } = useForm();
   const [message, setMessage] = useState("");
   const [images, setImages] = useState(imgUrl);
 
@@ -20,7 +19,7 @@ const Form = ({
     console.log("====================================");
     try {
       const res = await Axios.put(`/api/prizes/${id}`, form);
-      console.log(res)
+      console.log(res);
     } catch (error) {
       setMessage("Failed to update pet");
     }
@@ -113,11 +112,10 @@ const Form = ({
           ) : (
             <span className="error-message"></span>
           )} */}
-            <label>סיכוי</label>
-            100 = נדיר מאוד
-            50 = נדיר
-            1 = שכיח
+          <label>סיכוי</label>
+          {/* 100 = נדיר מאוד 50 = נדיר 1 = שכיח
           <Select
+            name="chances"
             style={{
               backgroundColor: "white",
               borderRadius: "6px",
@@ -138,15 +136,13 @@ const Form = ({
             <MenuItem value={100}>שכיח</MenuItem>
             <MenuItem value={50}>נדיר</MenuItem>
             <MenuItem value={1}>נדיר מאוד</MenuItem>
-            <MenuItem value={chances}>
-            </MenuItem>
-          </Select>
+            <MenuItem value={chances}></MenuItem>
+          </Select> */}
           {/* {errors.prizeChance ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
           )} */}
-
           <TextField
             type="number"
             name="quantity"
@@ -169,7 +165,6 @@ const Form = ({
             label="כמות"
             variant="outlined"
           />
-
           <TextField
             name="smsTemplate"
             defaultValue={smsTemplate}
@@ -256,7 +251,6 @@ const Form = ({
           </Button>
         </div>
       </form>
-     
 
       <style jsx>{`
         .error-message {
@@ -272,7 +266,7 @@ const Form = ({
           border-radius: 12px;
         }
         .container {
-            background-size: cover;
+          background-size: cover;
           height: 100%;
           padding: 0;
         }
