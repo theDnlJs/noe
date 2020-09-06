@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { useWindowSize } from "../src/hooks/useWindowSize";
 import GameScreen from "../screens/GameScreen";
-import NotMobileScreen from "../screens/NotMobileScreen";
+import NotMobile from "../components/NotMobile";
 
 export default function Home() {
   const size = useWindowSize();
@@ -15,8 +15,8 @@ export default function Home() {
           <title>MAINSTREAM</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        {size.width > 780 && <NotMobileScreen />}
-        {size.width < 780 && <GameScreen />}
+        {size.width > 900 && <NotMobile />}
+        {size.width < 900 && <GameScreen />}
         <style jsx global>{`
           html,
           body {

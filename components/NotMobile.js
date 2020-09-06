@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
 
-function alreadPlayed() {
+function NotMobile() {
   return (
     <Fade in timeout={500}>
       <div className="container">
@@ -20,43 +20,17 @@ function alreadPlayed() {
               >
                 אהלן גבר!
                 <br />
-                נראה שכבר
+                ההשתתפות במשחק
                 <br />
-                שחקת
+                ממכשירי מוביל
+                <br />
+                בלבד!
               </span>
             </Typography>
             <br />
-            <Typography variant="body1">
-              <span
-                style={{
-                  color: "white",
-                  fontWeight: "300",
-                  fontFamily: "Rubik",
-                }}
-              >
-                ניתן להשתתף בפעילות
-                <br />
-                פעם אחת.
-              </span>
-            </Typography>
+           
             <br />
             <br />
-
-            <Typography variant="body1">
-              <span
-                style={{
-                  color: "white",
-                  fontWeight: "300",
-                  fontFamily: "Rubik",
-                }}
-              >
-                אבל אל תדאג,
-                <br />
-                תגיע לסניף
-                <br />
-                אנחנו נדאג לפנק אותך
-              </span>
-            </Typography>
           </div>
         </div>
         <Grid container>
@@ -77,6 +51,7 @@ function alreadPlayed() {
             background-image: url("images/bg1.png");
             background-size: cover;
             min-height: 100vh;
+            width: 100vw;
             padding: 0;
             z-index: 1;
           }
@@ -112,4 +87,4 @@ function alreadPlayed() {
   );
 }
 
-export default alreadPlayed;
+export default NotMobile;
