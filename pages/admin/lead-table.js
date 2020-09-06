@@ -57,7 +57,7 @@ const columns = [
   },
   {
     name: "compoleted",
-    label: "מישוש",
+    label: "מימוש",
     options: {
       filter: true,
       sort: false,

@@ -108,7 +108,7 @@ const prizeTable = () => {
     console.log(data, "lead table");
     console.log("====================================");
     return (
-      <>
+      <div>
       <AdminAppBar/>
         <h1 style={{ textAlign: "center" }}>טבלת פרסים - חישגד מיינסטרים</h1>
         <div
@@ -131,7 +131,7 @@ const prizeTable = () => {
             </div>
           )}
         </div>
-      </>
+      </div>
     );
   }
 };
