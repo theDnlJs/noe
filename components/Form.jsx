@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Axios from "axios";
 import { useForm } from "react-hook-form";
+import { useRouter } from 'next/router'
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Select from "@material-ui/core/Select";
@@ -10,6 +11,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 const Form = ({
   prizeForm: { name, desc, imgUrl = "", chances, quantity, smsTemplate },
 }) => {
+  const router = useRouter()
+  const { id } = router.query
   const { register, handleSubmit, watch, errors } = useForm();
   const [message, setMessage] = useState("");
   const [images, setImages] = useState(imgUrl);
@@ -21,6 +24,7 @@ const Form = ({
       const res = await Axios.put(`/api/prizes/${id}`, form);
       console.log(res);
     } catch (error) {
+      console.log(error);
       setMessage("Failed to update pet");
     }
   };
@@ -138,7 +142,7 @@ const Form = ({
             <MenuItem value={1}>נדיר מאוד</MenuItem>
             <MenuItem value={chances}></MenuItem>
           </Select> */}
-          {/* {errors.prizeChance ? (
+          {/* {errors.prizeChance ?  (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (
             <span className="error-message"></span>
