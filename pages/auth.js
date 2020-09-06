@@ -2,8 +2,8 @@ import FirebaseAuth from '../components/FirebaseAuth'
 
 const Auth = () => {
   return (
-    <div>
-      <p>Sign in</p>
+    <div style={{ textAlign:'center' }}>
+      <p>טופס התחברות</p>
       <div>
         <FirebaseAuth />
       </div>

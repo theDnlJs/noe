@@ -48,30 +48,30 @@ const FirebaseAuth = () => {
     }
   };
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       {renderAuth ? (
-        <form className="">
+        <form style={{ display: 'flex', flexDirection: 'column', width:'300px', margin:'0 auto', gap: '1rem' }} className="">
           <label htmlFor="userEmail" className="block">
-            Email:
+            מייל:
           </label>
           <input
             type="email"
             className="my-1 p-1 w-full"
             name="userEmail"
             value={email}
-            placeholder="E.g: faruq123@gmail.com"
+            placeholder="מייל"
             id="userEmail"
             onChange={(event) => onChangeHandler(event)}
           />
           <label htmlFor="userPassword" className="block">
-            Password:
+            סיסמא:
           </label>
           <input
             type="password"
             className="mt-1 mb-3 p-1 w-full"
             name="userPassword"
             value={password}
-            placeholder="Your Password"
+            placeholder="סיסמא"
             id="userPassword"
             onChange={(event) => onChangeHandler(event)}
           />
@@ -81,7 +81,7 @@ const FirebaseAuth = () => {
               signInWithEmailAndPasswordHandler(event, email, password);
             }}
           >
-            Sign in
+            התחבר
           </button>
         </form>
             

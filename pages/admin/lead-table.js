@@ -92,7 +92,7 @@ const columns = [
 
 const leadTable = () => {
   const options = {
-    selectableRows: "multiple",
+    selectableRows: "none",
   };
   const { user, logout } = useUser();
   const { data } = useRequest({

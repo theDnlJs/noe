@@ -76,7 +76,7 @@ const columns = [
 const prizeTable = () => {
   const router = useRouter();
     const options = {
-      selectableRows: "single",
+      selectableRows: "none",
       onRowClick: (rowData, rowMeta, rowExpanded) => {
         console.log("====================================");
         console.log(rowData, rowMeta, rowExpanded);
