@@ -14,4 +14,9 @@ export default {
         site: '@site',
         cardType: 'summary_large_image',
       },
+      whatsapp: {
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      },
   }
