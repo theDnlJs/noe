@@ -199,7 +199,6 @@ const Form = ({
           <TextField
             style={{ display: "none" }}
             name="imgUrl"
-            defaultValue={imgUrl}
             value={images}
             inputRef={register({
               required: true,
