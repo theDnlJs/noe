@@ -2,16 +2,18 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Form from "../../../../components/Form";
 import prizeTable from "../../prize-table";
-import { useUser } from "../../utils/auth/useUser";
+import { useUser } from "../../../../utils/auth/useUser";
+import Link from "next/link";
 
 const fetcher = (url) =>
   fetch(url)
     .then((res) => res.json())
     .then((json) => json.data);
 
-const EditPet = () => {
+const EditPrize = () => {
   const router = useRouter();
   const { id } = router.query;
+  const { user, logout } = useUser();
   const { data: prize, error } = useSWR(
     id ? `/api/prizes/${id}` : null,
     fetcher
@@ -26,8 +28,8 @@ const EditPet = () => {
     imgUrl: prize.imgUrl,
     quantity: prize.quantity,
     chances: prize.chances,
+    smsTemplate: prize.smsTemplate
   };
-  const { user, logout } = useUser();
 if (!user) {
   return (
     <>
@@ -48,4 +50,4 @@ if (!user) {
   );
 };
 
-export default EditPet;
+export default EditPrize;

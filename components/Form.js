@@ -10,9 +10,11 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
+import Link from "next/link";
+
 const Form = ({
   formId,
-  prizeForm: { name, desc, imgUrl, chances, quantity },
+  prizeForm: { name, desc, imgUrl, chances, quantity, smsTemplate },
 }) => {
   const { register, handleSubmit, watch, errors } = useForm();
   const router = useRouter();
@@ -124,7 +126,7 @@ const Form = ({
           ) : (
             <span className="error-message"></span>
           )} */}
-
+            <labe>סיכוי</labe>
           <Select
             style={{
               backgroundColor: "white",
@@ -143,9 +145,14 @@ const Form = ({
             label="סיכוי"
             variant="outlined"
           >
-            <MenuItem value={1}>שכיח</MenuItem>
+            <MenuItem value={100}>שכיח</MenuItem>
             <MenuItem value={50}>נדיר</MenuItem>
-            <MenuItem value={100}>נדיר מאוד</MenuItem>
+            <MenuItem value={1}>נדיר מאוד</MenuItem>
+            <MenuItem value={chances}>
+            {chances === 100 && 'שכיח'}
+            {chances === 50 && 'נדיר'}
+            {chances === 1 && 'נדיר מאוד'}
+            </MenuItem>
           </Select>
           {/* {errors.prizeChance ? (
             <span className="error-message">יש להזין שם מלא</span>
@@ -173,6 +180,28 @@ const Form = ({
             })}
             id="outlined-basic"
             label="כמות"
+            variant="outlined"
+          />
+
+          <TextField
+            name="smsTemplate"
+            defaultValue={smsTemplate}
+            style={{
+              backgroundColor: "white",
+              borderRadius: "6px",
+              border: "none",
+              marginTop: "0.75rem",
+              color: "white",
+              fontWeight: "300",
+              fontFamily: "Rubik",
+              width: "100%",
+              error: errors.prizeDesc,
+            }}
+            inputRef={register({
+              required: true,
+            })}
+            id="outlined-basic"
+            label="הודעת סמס"
             variant="outlined"
           />
           {/* {errors.prizeQuantity ? (
@@ -225,7 +254,7 @@ const Form = ({
             type="submit"
             variant="contained"
             style={{
-              backgroundColor: 'gold',
+              backgroundColor: "gold",
               margin: "0 auto",
               color: "black",
               minWidth: "70%",

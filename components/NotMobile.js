@@ -39,7 +39,6 @@ function NotMobile() {
           </Grid>
         </Grid>
         {/* styles */}
-
         <style jsx>{`
           h1 {
             color: gold;

@@ -151,6 +151,26 @@ function PrizesForm() {
             label="כמות"
             variant="outlined"
           />
+            <TextField
+            name="smsTemplate"
+            style={{
+              backgroundColor: "white",
+              borderRadius: "6px",
+              border: "none",
+              marginTop: "0.75rem",
+              color: "white",
+              fontWeight: "300",
+              fontFamily: "Rubik",
+              width: "100%",
+              error: errors.prizesmsTemplate,
+            }}
+            inputRef={register({
+              required: true,
+            })}
+            id="outlined-basic"
+            label="סמס"
+            variant="outlined"
+          />
           {/* {errors.prizeQuantity ? (
             <span className="error-message">יש להזין שם מלא</span>
           ) : (

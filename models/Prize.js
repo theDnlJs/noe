@@ -30,6 +30,9 @@ const PrizeSchema = new mongoose.Schema({
   },
   leads: {
     type: Array,
+  },
+  smsTemplate : {
+    type: String,
   }
 });
 

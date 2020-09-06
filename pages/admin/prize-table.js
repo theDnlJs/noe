@@ -30,6 +30,10 @@ const columns = [
     },
   },
   {
+    name: "smsTemplate",
+    label: "הודעת sms",
+  },
+  {
     name: "imgUrl",
     label: "תמונה",
     options: {
@@ -61,7 +65,7 @@ const columns = [
           <div>
             {value === 100 && "שכיח"}
             {value === 50 && "נדיר"}
-            {value === 50 && "נדיר מאוד"}
+            {value === 1 && "נדיר מאוד"}
           </div>
         );
       },
@@ -69,16 +73,17 @@ const columns = [
   },
 ];
 
-const options = {
-  selectableRows: "single",
-  onRowClick: (rowData, rowMeta, rowExpanded) => {
-    console.log("====================================");
-    console.log(rowData, rowMeta, rowExpanded);
-    console.log("====================================");
-    router.push(`/admin/prize/${rowData[0]}/edit`);
-  },
-};
 const prizeTable = () => {
+  const router = useRouter();
+    const options = {
+      selectableRows: "single",
+      onRowClick: (rowData, rowMeta, rowExpanded) => {
+        console.log("====================================");
+        console.log(rowData, rowMeta, rowExpanded);
+        console.log("====================================");
+        router.push(`/admin/prize/${rowData[0]}/edit`);
+      },
+    };
   const { data } = useRequest({
     url: "/api/prizes",
   });

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useWindowSize } from "../src/hooks/useWindowSize";
 import GameScreen from "../screens/GameScreen";
 import NotMobile from "../components/NotMobile";
+import { NextSeo } from 'next-seo'
 
 export default function Home() {
   const size = useWindowSize();
@@ -11,10 +12,35 @@ export default function Home() {
   }, []);
   return (
       <div  className="container">
-        <Head>
-          <title>MAINSTREAM</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      
+        <NextSeo
+        title="מגרדים וזוכים במיינסטרים"
+        description="הפעילות שמשגעת את העיר, מותג האופנה מיינסטרים מחלק לכם הטבות ומתנות למימוש בחנות
+        תמונה אשלח בראשון"
+        canonical="https://www.mainstreamen.com/"
+        openGraph={{
+          url: 'https://www.mainstreamen.com/',
+          title: 'מגרדים וזוכים במיינסטרים',
+          description: `הפעילות שמשגעת את העיר, מותג האופנה מיינסטרים מחלק לכם הטבות ומתנות למימוש בחנות
+          תמונה אשלח בראשון`,
+          images: [
+            {
+              url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+            },
+            {
+              url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg',
+              width: 900,
+              height: 800,
+              alt: 'Og Image Alt Second',
+            },
+            { url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg' },
+            { url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg' },
+          ],
+        }}
+      />
         {size.width > 900 && <NotMobile />}
         {size.width < 900 && <GameScreen />}
         <style jsx global>{`

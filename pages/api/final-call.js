@@ -15,6 +15,7 @@ export default async function handler(req, res) {
   const prizeId = prizeOwn._id;
   const prizeDesc = prizeOwn.desc;
   const prizeName = prizeOwn.name;
+  const smsTemplate = prizeOwn.smsTemplate;
   switch (method) {
     case "POST":
       try {
@@ -25,11 +26,12 @@ export default async function handler(req, res) {
         });
         newLead.save().catch((e) => console.log(e));
         let doc = await  Prize.findOneAndUpdate({ _id: prizeId }, { $push: { "leads": newLead } , $inc: { quantity: -1 } });
+        console.log(doc)
         // send sms via shitty company  
         const data = new FormData();
           data.append(
             "InforuXML",
-            `<Inforu> <User>\n\n<Username>laba</Username>\n\n<Password>laba2536</Password> </User>\n<Content Type="sms">\n\n<Message>אהלן גבר, זכית ב${prizeDesc}</Message> </Content>\n<Recipients>\n\n<PhoneNumber>${newLead.phone}</PhoneNumber> </Recipients>\n<Settings>\n\n<Sender>MAINSTREAM</Sender> </Settings>\n\n</Inforu>`
+            `<Inforu> <User>\n\n<Username>laba</Username>\n\n<Password>laba2536</Password> </User>\n<Content Type="sms">\n\n<Message>${smsTemplate}</Message> </Content>\n<Recipients>\n\n<PhoneNumber>${newLead.phone}</PhoneNumber> </Recipients>\n<Settings>\n\n<Sender>MAINSTREAM</Sender> </Settings>\n\n</Inforu>`
             );
             const config = {
               method: "post",
