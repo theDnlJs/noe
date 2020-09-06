@@ -4,6 +4,8 @@ import Switch from "@material-ui/core/Switch";
 import axios from "axios";
 import React from "react";
 import Moment from "react-moment";
+import { useUser } from "../../utils/auth/useUser";
+import Link from "next/link";
 
 const columns = [
   {
@@ -89,15 +91,26 @@ const columns = [
 ];
 
 const leadTable = () => {
-  const { data } = useRequest({
-    url: "/api/leads",
-  });
-  console.log("====================================");
-  console.log(data, "lead table");
-  console.log("====================================");
   const options = {
     selectableRows: "multiple",
   };
+  const { user, logout } = useUser();
+  const { data } = useRequest({
+    url: "/api/leads",
+  });
+  if (!user) {
+    return (
+      <>
+        <p>היי גבר</p>
+        <p>
+          אתה לא מחובר
+          <Link href={"/auth"}>
+            <a> התחבר</a>
+          </Link>
+        </p>
+      </>
+    );
+  }
 
   return (
     <>
