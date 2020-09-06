@@ -9,7 +9,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 
 const Form = ({
-  prizeForm: { name, desc, imgUrl, chances, quantity, smsTemplate },
+  prizeForm: { name, desc, imgUrl = "", chances, quantity, smsTemplate },
 }) => {
   const { register, handleSubmit, watch, errors } = useForm();  
   const [message, setMessage] = useState("");
@@ -17,7 +17,6 @@ const Form = ({
 
   /* The PUT method edits an existing entry in the mongodb database. */
   const putData = async (form) => {
-
     console.log("====================================");
     try {
       const res = await Axios.put(`/api/prizes/${id}`, form);
@@ -115,6 +114,9 @@ const Form = ({
             <span className="error-message"></span>
           )} */}
             <label>סיכוי</label>
+            100 = נדיר מאוד
+            50 = נדיר
+            1 = שכיח
           <Select
             style={{
               backgroundColor: "white",
@@ -137,9 +139,6 @@ const Form = ({
             <MenuItem value={50}>נדיר</MenuItem>
             <MenuItem value={1}>נדיר מאוד</MenuItem>
             <MenuItem value={chances}>
-            {chances === 100 && 'שכיח'}
-            {chances === 50 && 'נדיר'}
-            {chances === 1 && 'נדיר מאוד'}
             </MenuItem>
           </Select>
           {/* {errors.prizeChance ? (
