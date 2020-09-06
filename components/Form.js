@@ -8,9 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Link from "next/link";
+
 
 const Form = ({
   formId,
@@ -291,8 +289,7 @@ const Form = ({
           border-radius: 12px;
         }
         .container {
-          background: url("images/bg1.png");
-          background-size: cover;
+            background-size: cover;
           height: 100%;
           padding: 0;
         }
