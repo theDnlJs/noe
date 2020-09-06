@@ -29,7 +29,7 @@ const EditPrize = () => {
 
   return (
     <>
-      <Form prizeForm={prizeForm} forNewPet={false} />
+      <Form prizeForm={prizeForm}  />
     </>
   );
 };

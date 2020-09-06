@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-import { mutate } from "swr";
 import Axios from "axios";
 import { useForm } from "react-hook-form";
 import Button from "@material-ui/core/Button";
@@ -11,12 +9,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 
 const Form = ({
-  formId,
   prizeForm: { name, desc, imgUrl, chances, quantity, smsTemplate },
 }) => {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const router = useRouter();
-  const contentType = "application/json";
+  const { register, handleSubmit, watch, errors } = useForm();  
   const [message, setMessage] = useState("");
   const [images, setImages] = useState(imgUrl);
 
@@ -28,7 +23,6 @@ const Form = ({
     console.log("====================================");
     try {
       const res = await Axios.put(`/api/prizes/${id}`, form);
-      const { data } = await res.json();
     } catch (error) {
       setMessage("Failed to update pet");
     }
