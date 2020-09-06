@@ -21,6 +21,7 @@ const Form = ({
     console.log("====================================");
     try {
       const res = await Axios.put(`/api/prizes/${id}`, form);
+      console.log(res)
     } catch (error) {
       setMessage("Failed to update pet");
     }
@@ -55,7 +56,8 @@ const Form = ({
   const [loading, setLoading] = useState(false);
   return (
     <div style={{ backgroundColor: "black" }} className="container">
-      <br />
+      <h1>check it out</h1>
+      {/* <br />
       <hr />
       <h2 style={{ color: "white", textAlign: "center" }}>טופס עריכת פרס</h2>
       <hr />
@@ -295,7 +297,7 @@ const Form = ({
           width: 87.5%;
           margin-top: 6vh;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };
