@@ -41,8 +41,8 @@ export default function Home() {
           ],
         }}
       />
-        {size.width > 900 && <NotMobile />}
-        {size.width < 900 && <GameScreen />}
+        {size.width > 1336 && <NotMobile />}
+        {size.width < 1336 && <GameScreen />}
         <style jsx global>{`
           html,
           body {

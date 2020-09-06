@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Form from "../../../../components/Form";
-import prizeTable from "../../prize-table";
 import { useUser } from "../../../../utils/auth/useUser";
 import Link from "next/link";
 
@@ -11,6 +10,7 @@ const fetcher = (url) =>
     .then((json) => json.data);
 
 const EditPrize = () => {
+  if (error) return <p>Failed to load</p>;
   const router = useRouter();
   const { id } = router.query;
   const { user, logout } = useUser();
@@ -18,8 +18,19 @@ const EditPrize = () => {
     id ? `/api/prizes/${id}` : null,
     fetcher
   );
-
-  if (error) return <p>Failed to load</p>;
+  if (!user) {
+    return (
+      <>
+        <p>היי גבר</p>
+        <p>
+          אתה לא מחובר
+          <Link href={"/auth"}>
+            <a> התחבר</a>
+          </Link>
+        </p>
+      </>
+    );
+  }
   if (!prize) return <p>Loading...</p>;
 
   const prizeForm = {
@@ -28,21 +39,9 @@ const EditPrize = () => {
     imgUrl: prize.imgUrl,
     quantity: prize.quantity,
     chances: prize.chances,
-    smsTemplate: prize.smsTemplate
+    smsTemplate: prize.smsTemplate,
   };
-if (!user) {
-  return (
-    <>
-      <p>היי גבר</p>
-      <p>
-        אתה לא מחובר
-        <Link href={"/auth"}>
-          <a> התחבר</a>
-        </Link>
-      </p>
-    </>
-  );
-}
+
   return (
     <>
       <Form prizeForm={prizeForm} forNewPet={false} />

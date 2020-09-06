@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useUser } from "../../utils/auth/useUser";
 import Link from "next/link";
+import AdminAppBar from '../../components/AdminAppBar'
 
 const columns = [
   {
@@ -108,6 +109,7 @@ const prizeTable = () => {
     console.log("====================================");
     return (
       <>
+      <AdminAppBar/>
         <h1 style={{ textAlign: "center" }}>טבלת פרסים - חישגד מיינסטרים</h1>
         <div
           style={{

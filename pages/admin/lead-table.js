@@ -6,6 +6,7 @@ import React from "react";
 import Moment from "react-moment";
 import { useUser } from "../../utils/auth/useUser";
 import Link from "next/link";
+import AdminAppBar from '../../components/AdminAppBar'
 
 const columns = [
   {
@@ -111,9 +112,24 @@ const leadTable = () => {
       </>
     );
   }
-
+  const completed = data?.allLeads?.filter((item)=>{
+    console.log(item)
+    item.compoleted === true
+  })
   return (
     <>
+    <h4 style={{ textAlign:'center',display:'felx',justifyContent:'center'}}>
+    עד כה מספר המשתתפים הוא {'  '}
+    {data && data.allLeads.length}
+    {'  '}
+    </h4>
+    <h4 style={{ textAlign:'center',display:'felx',justifyContent:'center'}}>
+    מספר המשתתפים שלא ממישמו {'  '}
+    {data && completed.length }
+    {'  '}
+    </h4>
+ 
+    <AdminAppBar/>
       <h1 style={{ textAlign: "center" }}>טבלת ליידים - חישגד מיינסטרים</h1>
       <div
         style={{
