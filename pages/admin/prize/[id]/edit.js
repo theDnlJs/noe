@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import Form from "../../../../components/Form";
-import Link from "next/link";
+import Form from "../../../../components/Form.jsx";
 
 const fetcher = (url) =>
   fetch(url)

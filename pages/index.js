@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { useWindowSize } from "../src/hooks/useWindowSize";
 import GameScreen from "../screens/GameScreen";
-import NotMobile from "../components/NotMobile";
+import NotMobile from "../components/NotMobile.jsx";
 import { NextSeo } from 'next-seo'
 
 export default function Home() {

@@ -29,11 +29,8 @@ const Form = ({
     try {
       const res = await Axios.put(`/api/prizes/${id}`, form);
       const { data } = await res.json();
-      mutate(`/api/pets/${id}`, data, false); // Update the local data without a revalidation
     } catch (error) {
       setMessage("Failed to update pet");
-    } finally {
-      router.push("/admin/prize-table");
     }
   };
 
