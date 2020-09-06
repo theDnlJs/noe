@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Form from "../../../../components/Form";
-
-import { useUser } from "../../../../utils/auth/useUser";
 import Link from "next/link";
 
 const fetcher = (url) =>
@@ -13,7 +11,6 @@ const fetcher = (url) =>
 const EditPrize = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { user, logout } = useUser();
   const { data: prize, error } = useSWR(
     id ? `/api/prizes/${id}` : null,
     fetcher
@@ -30,19 +27,7 @@ const EditPrize = () => {
     chances: prize.chances,
     smsTemplate: prize.smsTemplate
   };
-if (!user) {
-  return (
-    <>
-      <p>היי גבר</p>
-      <p>
-        אתה לא מחובר
-        <Link href={"/auth"}>
-          <a> התחבר</a>
-        </Link>
-      </p>
-    </>
-  );
-}
+
   return (
     <>
       <Form prizeForm={prizeForm} forNewPet={false} />
