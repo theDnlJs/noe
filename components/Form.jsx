@@ -1,18 +1,20 @@
 import { useState } from "react";
 import Axios from "axios";
 import { useForm } from "react-hook-form";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import NativeSelect from "@material-ui/core/NativeSelect";
 
 const Form = ({
   prizeForm: { name, desc, imgUrl = "", chances, quantity, smsTemplate },
 }) => {
-  const router = useRouter()
-  const { id } = router.query
+  const router = useRouter();
+  const { id } = router.query;
   const { register, handleSubmit, watch, errors } = useForm();
   const [message, setMessage] = useState("");
   const [images, setImages] = useState(imgUrl);
@@ -23,6 +25,7 @@ const Form = ({
     try {
       const res = await Axios.put(`/api/prizes/${id}`, form);
       console.log(res);
+      router.push('/admin/prize-table')
     } catch (error) {
       console.log(error);
       setMessage("Failed to update pet");
@@ -116,7 +119,6 @@ const Form = ({
           ) : (
             <span className="error-message"></span>
           )} */}
-          <label>סיכוי</label>
           {/* 100 = נדיר מאוד 50 = נדיר 1 = שכיח
           <Select
             name="chances"
@@ -147,6 +149,30 @@ const Form = ({
           ) : (
             <span className="error-message"></span>
           )} */}
+
+          <FormControl
+            style={{
+              backgroundColor: "white",
+              borderRadius: "6px",
+              border: "none",
+              marginTop: "0.75rem",
+              color: "black",
+              fontWeight: "300",
+              fontFamily: "Rubik",
+              width: "100%",
+            }}
+          >
+            <FormHelperText>סיכוי</FormHelperText>
+            <NativeSelect
+              defaultValue={chances}
+              name="age"
+              inputProps={{ "aria-label": "chances" }}
+            >
+              <option value={1}>נדיר מאוד</option>
+              <option value={50}>נדיר</option>
+              <option value={100}>שכיח</option>
+            </NativeSelect>
+          </FormControl>
           <TextField
             type="number"
             name="quantity"
@@ -181,7 +207,6 @@ const Form = ({
               fontWeight: "300",
               fontFamily: "Rubik",
               width: "100%",
-              error: errors.prizeDesc,
             }}
             inputRef={register({
               required: true,
@@ -226,7 +251,7 @@ const Form = ({
           {loading ? (
             <h3>רגע אחי, טוען...</h3>
           ) : (
-            <img style={{ width: "320px" }} src={images} />
+            <img style={{ width: "100%" }} src={images} />
           )}
           {/* {errors.prizeImageUrl ? (
             <span className="error-message">יש להזין שם מלא</span>
