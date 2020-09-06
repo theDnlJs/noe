@@ -17,9 +17,7 @@ const Form = ({
 
   /* The PUT method edits an existing entry in the mongodb database. */
   const putData = async (form) => {
-    const { id } = router.query;
-    console.log("====================================");
-    console.log(form, id);
+
     console.log("====================================");
     try {
       const res = await Axios.put(`/api/prizes/${id}`, form);
@@ -259,12 +257,7 @@ const Form = ({
           </Button>
         </div>
       </form>
-      <p>{message}</p>
-      <div>
-        {Object.keys(errors).map((err, index) => (
-          <li key={index}>{err}</li>
-        ))}
-      </div>
+     
 
       <style jsx>{`
         .error-message {
