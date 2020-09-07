@@ -24,12 +24,11 @@ function FirstScreen() {
   }
 
   return (
-    <animated.div style={springFade}>
+  
       <div className="container">
         <Grid container>
           <Grid item xs={12}>
             <div style={{ display: 'flex', textAlign: 'start' }}>
-
             <Animated
             animationInDuration={5000}
             animationInDelay={1500}
@@ -111,7 +110,6 @@ function FirstScreen() {
           }
         `}</style>
       </div>
-    </animated.div>
   );
 }
 
