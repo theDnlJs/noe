@@ -42,7 +42,7 @@ function StepThree() {
                 style={{
                   color: "black",
                   fontWeight: "300",
-                  fontFamily: "Rubik",
+                
                 }}
               >
                 יש לגרד את האיזור הכסוף מעלה באמצעות

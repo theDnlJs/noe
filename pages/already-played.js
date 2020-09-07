@@ -15,7 +15,7 @@ function alreadPlayed() {
                 style={{
                   color: "#ffd700",
                   fontWeight: "700",
-                  fontFamily: "Rubik",
+                
                 }}
               >
                 אהלן גבר!
@@ -31,7 +31,7 @@ function alreadPlayed() {
                 style={{
                   color: "white",
                   fontWeight: "300",
-                  fontFamily: "Rubik",
+                
                 }}
               >
                 ניתן להשתתף בפעילות
@@ -47,7 +47,7 @@ function alreadPlayed() {
                 style={{
                   color: "white",
                   fontWeight: "300",
-                  fontFamily: "Rubik",
+                
                 }}
               >
                 אבל אל תדאג,

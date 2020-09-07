@@ -3,9 +3,21 @@ import { red } from "@material-ui/core/colors";
 
 // Create a theme instance.
 const theme = createMuiTheme({
-  fontFamily: 'Rubik',
   direction: "rtl",
-  
+  typography: {
+    fontFamily: [
+      "-apple-system",
+      "Open Sans Hebrew Condensed",
+      '"Open Sans Hebrew CondensedI"',
+      "Open Sans Hebrew Condensed",
+      '"Open Sans Hebrew Condensed"',
+      "Open Sans Hebrew Condensed",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+  },
   palette: {
     primary: {
       main: "#000",
@@ -20,8 +32,8 @@ const theme = createMuiTheme({
       default: "#fff",
     },
     dark: {
-      main: "#000"
-    }
+      main: "#000",
+    },
   },
 });
 

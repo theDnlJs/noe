@@ -78,7 +78,6 @@ const Form = ({
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
             }}
             inputRef={register({
@@ -103,7 +102,6 @@ const Form = ({
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
               error: errors.prizeDesc,
             }}
@@ -128,7 +126,6 @@ const Form = ({
               border: "none",
               marginTop: "0.75rem",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
             }}
             defaultValue={chances}
@@ -158,7 +155,6 @@ const Form = ({
               marginTop: "0.75rem",
               color: "black",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
             }}
           >
@@ -184,7 +180,6 @@ const Form = ({
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
               error: errors.prizeQuantity,
             }}
@@ -205,7 +200,6 @@ const Form = ({
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
             }}
             inputRef={register({
@@ -240,7 +234,6 @@ const Form = ({
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
               error: errors.prizeImageUrl,
             }}

@@ -30,6 +30,7 @@
     "mui-datatables": "^3.4.1",
     "next": "latest",
     "next-seo": "^4.7.3",
+    "nextjs-fonts": "^0.22.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react": "^16.13.0",

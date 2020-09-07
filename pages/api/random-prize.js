@@ -10,8 +10,11 @@ export default async function handler(req, res) {
         const Allprizes = await Prize.find({ quantity: { $gte: 8 } });
         console.log(Allprizes);
         const shaffled = Allprizes.filter((item) => {
-          if (toss > 9900) {
+          if (toss > 9500) {
             return item.chances === 1;
+          }
+          if (toss > 9000) {
+            return item.chances === 500
           } else {
             return item.chances === 100;
           }

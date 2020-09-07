@@ -57,7 +57,6 @@ function LeadForm() {
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
               error: errors.name,
             }}
@@ -80,7 +79,6 @@ function LeadForm() {
             style={{
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               backgroundColor: "white",
               borderRadius: "6px",
               marginTop: "1em",

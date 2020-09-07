@@ -29,7 +29,7 @@ function StepTwo() {
                 style={{
                   color: "#ffd700",
                   fontWeight: "700",
-                  fontFamily: "Rubik",
+                
                 }}
               >
                 רגע גבר!
@@ -40,7 +40,7 @@ function StepTwo() {
                 style={{
                   color: "white",
                   fontWeight: "300",
-                  fontFamily: "Rubik",
+                
                 }}
               >
                 לפני שמשחקים
@@ -51,7 +51,7 @@ function StepTwo() {
                 style={{
                   color: "white",
                   fontWeight: "300",
-                  fontFamily: "Rubik",
+                
                 }}
               >
                 מלא את הפרטים
@@ -97,7 +97,7 @@ function StepTwo() {
             z-index: 2;
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;

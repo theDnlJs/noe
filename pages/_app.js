@@ -5,16 +5,19 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 
 
+import '../styles.css'
 import { ThemeProvider } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { create } from "jss";
 import rtl from "jss-rtl";
 import { StylesProvider, jssPreset } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
 import theme from "../src/theme";
 
+
 import store from "../src/store";
+
+
 
 
 import Appbar from "../components/Appbar";
@@ -42,8 +45,8 @@ export default function App({ Component, pageProps }) {
             />
           </Head>
           <ThemeProvider theme={theme}>
-            <StylesProvider jss={jss}>
               <CssBaseline />
+            <StylesProvider jss={jss}>
                 <Appbar />
               <Container style={{ margin: "0", padding: "0", maxHeight: '100%'}} maxWidth="md">
                   <Component {...pageProps} />

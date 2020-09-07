@@ -15,7 +15,6 @@ function NotMobile() {
                 style={{
                   color: "#ffd700",
                   fontWeight: "700",
-                  fontFamily: "Rubik",
                 }}
               >
                 אהלן גבר!

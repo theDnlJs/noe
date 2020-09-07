@@ -9,8 +9,6 @@ import Link from "next/link";
 import AdminAppBar from "../../components/AdminAppBar";
 
 const leadTable = () => {
-
-
   const options = {
     selectableRows: "none",
   };

@@ -60,7 +60,6 @@ function PrizeForm({ id, name, desc, imgUrl, chances, quantity }) {
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
             }}
             inputRef={register({
@@ -85,7 +84,6 @@ function PrizeForm({ id, name, desc, imgUrl, chances, quantity }) {
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
               error: errors.prizeDesc,
             }}
@@ -113,7 +111,6 @@ function PrizeForm({ id, name, desc, imgUrl, chances, quantity }) {
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
               width: "100%",
               error: errors.prizeChance,
             }}
@@ -141,7 +138,7 @@ function PrizeForm({ id, name, desc, imgUrl, chances, quantity }) {
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
+            
               width: "100%",
               error: errors.prizeQuantity,
             }}
@@ -177,7 +174,7 @@ function PrizeForm({ id, name, desc, imgUrl, chances, quantity }) {
               marginTop: "0.75rem",
               color: "white",
               fontWeight: "300",
-              fontFamily: "Rubik",
+            
               width: "100%",
               error: errors.imgUrl,
             }}
