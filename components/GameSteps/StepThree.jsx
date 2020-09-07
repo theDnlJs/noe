@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { useSpring, animated } from "react-spring";
 import { Animated } from "react-animated-css";
-import Appbar from '../Appbar'
+import Appbar from "../Appbar";
 import Typography from "@material-ui/core/Typography";
 import {
   increment,
@@ -23,13 +23,10 @@ function StepThree() {
   }, []);
   return (
     <div className="container">
+      <Appbar />
       <Grid container>
         <Grid item xs={12}>
-          {tossted && (
-            <div style={{     }}>
-              <ScratchTicket tossted={tossted} />
-            </div>
-          )}
+          {tossted && <ScratchTicket tossted={tossted} />}
           <div
             style={{
               textAlign: "center",
@@ -43,7 +40,6 @@ function StepThree() {
                 style={{
                   color: "black",
                   fontWeight: "300",
-                
                 }}
               >
                 יש לגרד את האיזור הכסוף מעלה באמצעות
@@ -59,11 +55,9 @@ function StepThree() {
         .container {
           background: url("images/yellow-bg.png");
           background-size: cover;
-          min-height: 80vh;
-          overflow: 'hidden';
+          min-height: 100vh;
           width: 100%;
           padding: 0;
-          position: fixed
         }
         .concept {
           display: flex;
