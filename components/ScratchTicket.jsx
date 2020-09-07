@@ -23,7 +23,7 @@ function ScratchTicket() {
       setCompleted(true);
       setTimeout(() => {
         window.location.assign("https://www.facebook.com/mainstreamb7/?ti=as");
-      }, 5000);
+      }, 10000);
     },
   };
   return (
