@@ -31,9 +31,7 @@ function NotMobile() {
           </div>
         </div>
         <Grid container>
-          <Grid item xs={12}>
-            <img className="hand-img" src="images/hand.png" />
-          </Grid>
+        
         </Grid>
         {/* styles */}
         <style jsx>{`
@@ -46,10 +44,12 @@ function NotMobile() {
           .container {
             background-image: url("images/bg1.png");
             background-size: cover;
-            min-height: 100vh;
             width: 100vw;
+            height: 90vh;
             padding: 0;
             z-index: 1;
+            overflow: hidden;
+            scroll: none;
           }
           .concept {
             display: flex;
@@ -66,7 +66,7 @@ function NotMobile() {
             z-index: 2;
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
