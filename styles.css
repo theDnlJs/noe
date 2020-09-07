@@ -7,4 +7,5 @@ body{
     font-family: 'Open Sans Hebrew Condensed', sans-serif;
     text-align: center;
     margin: 0 auto;
+    max-width: 100vw;
 }

@@ -28,16 +28,19 @@ function FirstScreen() {
       <div className="container">
         <Grid container>
           <Grid item xs={12}>
+            <div style={{ display: 'flex', textAlign: 'start' }}>
+
             <Animated
             animationInDuration={5000}
-              animationInDelay={1500}
-              animateOnMount={true}
-              animationIn="headShake"
-              animationOut="headShake"
-              isVisible={true}
+            animationInDelay={1500}
+            animateOnMount={true}
+            animationIn="headShake"
+            animationOut="headShake"
+            isVisible={true}
             >
               <img className="hand-img" src="images/hand.png" />
             </Animated>
+            </div>
           </Grid>
           <div className="concept">
           <Animated
@@ -104,7 +107,6 @@ function FirstScreen() {
           .hand-img {
             width: 90.5%;
             margin-top: 6vh;
-            margin-left: 20vw;
          
           }
         `}</style>

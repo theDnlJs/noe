@@ -44,8 +44,8 @@ export default function App({ Component, pageProps }) {
           <ThemeProvider theme={theme}>
               <CssBaseline />
             <StylesProvider jss={jss}>
-                <Appbar />
               <Container style={{ margin: "0", padding: "0", maxHeight: '100%'}} maxWidth="md">
+                <Appbar />
                   <Component {...pageProps} />
               </Container>
             </StylesProvider>
