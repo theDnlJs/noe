@@ -14,16 +14,19 @@ export default async function handler(req, res) {
   switch (method) {
     case "GET":
       try {
-        await (headers.authorization)
+        await verifyIdToken(headers.authorization)
         const allPrizes = await Prize.find({});
         res.status(200).json({ allPrizes });
       } catch (error) {
         res.status(400).json({ success: false, error });
       }
+      finally {
+        console.log(headers.authorization);
+      }
       break;
       case "PUT": 
       try {
-        await (headers.authorization)
+        await verifyIdToken(headers.authorization)
         const updatePrize = await Prize.findOneAndUpdate({ _id: id }, { 
           name,
           desc,
