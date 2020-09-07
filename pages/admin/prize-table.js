@@ -76,6 +76,7 @@ const columns = [
 
 const prizeTable = () => {
   const router = useRouter();
+  const { user, logout } = useUser();
     const options = {
       selectableRows: "none",
       onRowClick: (rowData, rowMeta, rowExpanded) => {
@@ -87,8 +88,10 @@ const prizeTable = () => {
     };
   const { data } = useRequest({
     url: "/api/prizes",
+    headers: {
+      Authorization: user?.token
+    }
   });
-  const { user, logout } = useUser();
   if (!user) {
     return (
       <>
