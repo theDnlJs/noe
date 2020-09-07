@@ -6,11 +6,11 @@ import Typography from "@material-ui/core/Typography";
 import LeadForm from "../LeadForm";
 import { increment } from "../../lib/slices/gameSlice";
 import { Animated } from "react-animated-css";
-import Appbar from '../Appbar'
+import Appbar from "../Appbar";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 function StepTwo() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   function dispatchIncrement() {
     dispatch(increment());
@@ -18,11 +18,11 @@ function StepTwo() {
   return (
     <Fade in timeout={500}>
       <div className="container">
-          <Appbar/>
+        <Appbar />
         <div className="overlay">
-            <Typography variant="h2">
+          <Typography variant="h2">
             <Animated
-            animationInDuration={1000}
+              animationInDuration={1000}
               animationInDelay={250}
               animateOnMount={true}
               animationIn="slideInRight"
@@ -34,69 +34,65 @@ function StepTwo() {
                   color: "#ffd700",
                   fontWeight: "700",
                 }}
-                >
+              >
                 רגע גבר!
               </span>
-                </Animated>
-            </Typography>
-            <Typography variant="h4">
+            </Animated>
+          </Typography>
+          <Typography variant="h4">
             <Animated
-            animationInDuration={1000}
+              animationInDuration={1000}
               animationInDelay={330}
               animateOnMount={true}
               animationIn="fadeIn"
               animationOut="fadeIn"
               isVisible={true}
             >
-
               <span
                 style={{
                   color: "white",
                   fontWeight: "300",
-                  
                 }}
-                >
+              >
                 לפני שמשחקים
               </span>
-                </Animated>
-            </Typography>
-            <Typography variant="h4" gutterBottom>
+            </Animated>
+          </Typography>
+          <Typography variant="h4" gutterBottom>
             <Animated
-            animationInDuration={1000}
+              animationInDuration={1000}
               animationInDelay={500}
               animateOnMount={true}
               animationIn="fadeIn"
               animationOut="fadeIn"
               isVisible={true}
             >
-
               <span
                 style={{
                   color: "white",
                   fontWeight: "300",
-                  
                 }}
-                >
+              >
                 מלא את הפרטים
               </span>
-                </Animated>
-            </Typography>
-          
+            </Animated>
+          </Typography>
+
           <Animated
             animationInDuration={1000}
-              animationInDelay={750}
-              animateOnMount={true}
-              animationIn="zoomIn"
-              animationOut="zoomIn"
-              isVisible={true}
-            >
-          <LeadForm />
-            </Animated>
+            animationInDelay={750}
+            animateOnMount={true}
+            animationIn="zoomIn"
+            animationOut="zoomIn"
+            isVisible={true}
+          >
+            <LeadForm />
+          </Animated>
         </div>
 
         <Grid container>
           <Grid item xs={12}>
-            <img className="hand-img" src="images/hand.png" />
+            <img style={{ width: '100vw', height: '100vh' }} src="images/bg1.png" />
           </Grid>
         </Grid>
         {/* styles */}
@@ -109,8 +105,7 @@ function StepTwo() {
             color: white;
           }
           .container {
-            background-image: url("images/bg1.png");
-            background-size: cover;
+            
             min-height: 99vh;
             padding: 0;
             width: 100vw;
@@ -127,11 +122,15 @@ function StepTwo() {
             margin: 0 auto;
           }
           .overlay {
+            background-image: url("images/bg1.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             background: #000000de;
             z-index: 2;
             position: absolute;
             width: 100%;
-           height: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
