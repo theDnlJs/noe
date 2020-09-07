@@ -85,6 +85,9 @@ function FirstScreen() {
               {`למשחק>`}
             </Button>
               </Animated>
+              <br/>
+              <br/>
+
           </div>
         </Grid>
 
@@ -96,6 +99,7 @@ function FirstScreen() {
             background-size: cover;
             min-height: 100vh;
             padding: 0;
+            width: 100vw;
           }
           .concept {
             display: flex;

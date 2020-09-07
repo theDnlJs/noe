@@ -181,8 +181,8 @@ function LeadForm() {
             margin: 0 auto;
           }
           .concept-logo {
-            width: 65%;
-            margin-top: -7vh;
+            width: 65vw;
+            margin-top: 0
           }
           .hand-img {
             width: 87.5%;

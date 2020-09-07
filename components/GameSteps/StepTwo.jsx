@@ -20,7 +20,6 @@ function StepTwo() {
       <div className="container">
           <Appbar/>
         <div className="overlay">
-          
             <Typography variant="h2">
             <Animated
             animationInDuration={1000}
@@ -112,8 +111,9 @@ function StepTwo() {
           .container {
             background-image: url("images/bg1.png");
             background-size: cover;
-            min-height: 100vh;
+            min-height: 99vh;
             padding: 0;
+            width: 100vw;
             z-index: 1;
           }
           .concept {
@@ -131,7 +131,7 @@ function StepTwo() {
             z-index: 2;
             position: absolute;
             width: 100%;
-           height: 83.75vh;
+           height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;

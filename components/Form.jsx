@@ -290,6 +290,7 @@ const Form = ({
         .container {
           background-size: cover;
           height: 100%;
+          width: 100vw;
           padding: 0;
         }
         .concept {
