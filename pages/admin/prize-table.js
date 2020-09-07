@@ -72,7 +72,7 @@ const columns = [
       },
     },
   },
-];
+]; 
 
 const prizeTable = () => {
   const router = useRouter();

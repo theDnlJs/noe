@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     headers
   } = req;
 
-
+ 
   switch (method) {
     case "GET":
       try {
