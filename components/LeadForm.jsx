@@ -1,4 +1,3 @@
-import React, { Suspense } from "react";
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
@@ -6,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
 import Checkbox from "@material-ui/core/Checkbox";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch  } from "react-redux";
 
 import { useForm } from "react-hook-form";
 import { increment, setLeadState } from "../lib/slices/gameSlice";

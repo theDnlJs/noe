@@ -1,16 +1,10 @@
-import React, {useEffect} from "react";
-import useSWR from 'swr';
-
-import { useDispatch, useSelector } from "react-redux";
-
-import Button from "@material-ui/core/Button";
+import React from "react";
+import { useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
-
 import LeadForm from "../LeadForm";
-
-import { increment,setPrzie } from "../../lib/slices/gameSlice";
+import { increment } from "../../lib/slices/gameSlice";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 function StepTwo() {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";

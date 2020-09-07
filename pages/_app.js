@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import { Provider } from "react-redux";
-
-
 import '../styles.css'
 import { ThemeProvider } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
