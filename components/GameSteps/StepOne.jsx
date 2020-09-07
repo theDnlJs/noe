@@ -24,7 +24,15 @@ function FirstScreen() {
   }
 
   return (
-  
+    <Animated
+    animationInDuration={500}
+    animationInDelay={750}
+    animateOnMount={true}
+    animationIn="fadeIn"
+    animationOut="fadeIn"
+    isVisible={true}
+    >
+
       <div className="container">
         <Grid container>
           <Grid item xs={12}>
@@ -67,7 +75,7 @@ function FirstScreen() {
               size="large"
               color="primary"
               style={{
-                marginTop: "10vh",
+                marginTop: "2.5vh",
                 width: "50vw",
                 padding: "0.75em",
                 fontSize: "1.5rem",
@@ -110,6 +118,8 @@ function FirstScreen() {
           }
         `}</style>
       </div>
+    </Animated>
+
   );
 }
 

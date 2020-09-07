@@ -24,8 +24,8 @@ function StepTwo() {
             animationInDuration={1000}
               animationInDelay={250}
               animateOnMount={true}
-              animationIn="slideInDown"
-              animationOut="zoomOutDown"
+              animationIn="slideInRight"
+              animationOut="slideInRight"
               isVisible={true}
             >
               <span
