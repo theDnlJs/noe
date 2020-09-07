@@ -5,6 +5,7 @@ import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
 import LeadForm from "../LeadForm";
 import { increment } from "../../lib/slices/gameSlice";
+import { Animated } from "react-animated-css";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 function StepTwo() {
@@ -19,40 +20,77 @@ function StepTwo() {
         <div className="overlay">
           <div>
             <Typography variant="h2">
+            <Animated
+            animationInDuration={1000}
+              animationInDelay={250}
+              animateOnMount={true}
+              animationIn="slideInDown"
+              animationOut="zoomOutDown"
+              isVisible={true}
+            >
               <span
                 style={{
                   color: "#ffd700",
                   fontWeight: "700",
-                
                 }}
-              >
+                >
                 רגע גבר!
               </span>
+                </Animated>
             </Typography>
             <Typography variant="h4">
+            <Animated
+            animationInDuration={1000}
+              animationInDelay={330}
+              animateOnMount={true}
+              animationIn="fadeIn"
+              animationOut="fadeIn"
+              isVisible={true}
+            >
+
               <span
                 style={{
                   color: "white",
                   fontWeight: "300",
-                
+                  
                 }}
-              >
+                >
                 לפני שמשחקים
               </span>
+                </Animated>
             </Typography>
             <Typography variant="h4" gutterBottom>
+            <Animated
+            animationInDuration={1000}
+              animationInDelay={500}
+              animateOnMount={true}
+              animationIn="fadeIn"
+              animationOut="fadeIn"
+              isVisible={true}
+            >
+
               <span
                 style={{
                   color: "white",
                   fontWeight: "300",
-                
+                  
                 }}
-              >
+                >
                 מלא את הפרטים
               </span>
+                </Animated>
             </Typography>
           </div>
+          <Animated
+            animationInDuration={1000}
+              animationInDelay={750}
+              animateOnMount={true}
+              animationIn="zoomIn"
+              animationOut="zoomIn"
+              isVisible={true}
+            >
           <LeadForm />
+            </Animated>
         </div>
 
         <Grid container>
@@ -101,6 +139,7 @@ function StepTwo() {
           .hand-img {
             width: 87.5%;
             margin-top: 6vh;
+            margin-left: 10vw;
           }
         `}</style>
       </div>

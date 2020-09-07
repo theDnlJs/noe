@@ -125,7 +125,7 @@ function LeadForm() {
           color="default"
           disabled={true}
           style={{
-            color: "black",
+            color: "gold",
             minWidth: "70%",
             marginTop: "7vh",
             marginBottom: "10vh",

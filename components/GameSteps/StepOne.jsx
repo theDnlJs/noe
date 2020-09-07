@@ -40,23 +40,41 @@ function FirstScreen() {
             </Animated>
           </Grid>
           <div className="concept">
+          <Animated
+            animationInDuration={1500}
+              animationInDelay={500}
+              animateOnMount={true}
+              animationIn="zoomIn"
+              animationOut="fadeInUpBig"
+              isVisible={true}
+            >
             <img className="concept-logo" src="images/concept-logo.png" />
+            </Animated>
+            <Animated
+            animationInDuration={1500}
+              animationInDelay={500}
+              animateOnMount={true}
+              animationIn="slideInUp"
+              animationOut="slideInUp"
+              isVisible={true}
+            >
+
             <Button
               onClick={dispatchIncrement}
               variant="contained"
               size="large"
               color="primary"
               style={{
-              
                 marginTop: "10vh",
                 width: "50vw",
                 padding: "0.75em",
                 fontSize: "1.5rem",
                 borderRadius: "18px",
               }}
-            >
+              >
               {`למשחק>`}
             </Button>
+              </Animated>
           </div>
         </Grid>
 
