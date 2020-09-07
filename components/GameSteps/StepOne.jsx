@@ -86,6 +86,7 @@ function FirstScreen() {
           .hand-img {
             width: 90.5%;
             margin-top: 6vh;
+            margin-left: 20vw;
          
           }
         `}</style>

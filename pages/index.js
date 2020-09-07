@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useEffect } from "react";
 import { useWindowSize } from "../src/hooks/useWindowSize";
 import GameScreen from "../screens/GameScreen";

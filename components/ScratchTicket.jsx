@@ -29,6 +29,7 @@ function ScratchTicket() {
         alignItems: "center",
         alignContent: "center",
         marginTop: "3.5vh",
+        textAlign: 'right'
       }}
     >
       <ScratchCard {...settings}>
