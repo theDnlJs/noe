@@ -127,7 +127,7 @@ function LeadForm() {
           style={{
             color: "gold",
             minWidth: "70%",
-            marginTop: "7vh",
+            marginTop: "3vh",
             marginBottom: "10vh",
             padding: "1rem",
             fontSize: "2rem",
@@ -144,7 +144,7 @@ function LeadForm() {
           style={{
             color: "black",
             minWidth: "70%",
-            marginTop: "7vh",
+            marginTop: "3vh",
             marginBottom: "10vh",
             padding: "1rem",
             fontSize: "2rem",
@@ -169,9 +169,6 @@ function LeadForm() {
           }
           .container {
             background: url("images/bg1.png");
-            background-size: cover;
-            min-height: 100vh;
-            padding: 0;
           }
           .concept {
             display: flex;

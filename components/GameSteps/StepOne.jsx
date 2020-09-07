@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { useSpring, animated } from "react-spring";
 import { Animated } from "react-animated-css";
-
+import Appbar from '../Appbar'
 import { increment } from "../../lib/slices/gameSlice";
 
 function FirstScreen() {
@@ -32,8 +32,8 @@ function FirstScreen() {
     animationOut="fadeIn"
     isVisible={true}
     >
-
       <div className="container">
+      <Appbar/>
         <Grid container>
           <Grid item xs={12}>
             <div style={{ display: 'flex', textAlign: 'start' }}>

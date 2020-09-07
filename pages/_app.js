@@ -45,7 +45,6 @@ export default function App({ Component, pageProps }) {
               <CssBaseline />
             <StylesProvider jss={jss}>
               <Container style={{ margin: "0", padding: "0", maxHeight: '100%'}} maxWidth="md">
-                <Appbar />
                   <Component {...pageProps} />
               </Container>
             </StylesProvider>

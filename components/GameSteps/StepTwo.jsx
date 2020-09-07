@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import LeadForm from "../LeadForm";
 import { increment } from "../../lib/slices/gameSlice";
 import { Animated } from "react-animated-css";
+import Appbar from '../Appbar'
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 function StepTwo() {
@@ -17,8 +18,9 @@ function StepTwo() {
   return (
     <Fade in timeout={500}>
       <div className="container">
+          <Appbar/>
         <div className="overlay">
-          <div>
+          
             <Typography variant="h2">
             <Animated
             animationInDuration={1000}
@@ -80,7 +82,7 @@ function StepTwo() {
               </span>
                 </Animated>
             </Typography>
-          </div>
+          
           <Animated
             animationInDuration={1000}
               animationInDelay={750}
@@ -129,7 +131,7 @@ function StepTwo() {
             z-index: 2;
             position: absolute;
             width: 100%;
-            height: 100vh;
+           height: 83.75vh;
             display: flex;
             justify-content: center;
             align-items: center;

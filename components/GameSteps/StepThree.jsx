@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { useSpring, animated } from "react-spring";
 import { Animated } from "react-animated-css";
+import Appbar from '../Appbar'
 import Typography from "@material-ui/core/Typography";
 import {
   increment,
