@@ -28,18 +28,19 @@ function ScratchTicket() {
   };
   return (
     <div
+      onClick={(e) => e.stopPropagation()}
       style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         alignContent: "center",
-        marginTop: "3.5vh",
+        marginTop: "1vh",
         textAlign: "right",
-        position: "static",
+     
       }}
     >
       <Confetti run={completed} width={width} height={height} />
-      <ScratchCard {...settings}>
+      <ScratchCard style={{ position:'static' }} {...settings}>
         {prizeOwn && <img style={{ width: "320px" }} src={prizeOwn.imgUrl} />}
       </ScratchCard>
     </div>

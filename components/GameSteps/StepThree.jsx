@@ -26,15 +26,12 @@ function StepThree() {
       <Appbar />
       <Grid container>
         <Grid item xs={12}>
-          {tossted && <ScratchTicket tossted={tossted} />}
-          <div
-            style={{
-              textAlign: "center",
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "3vh",
-            }}
-          >
+          <div className="scratch-saction">
+          {tossted && (
+              <ScratchTicket tossted={tossted} />
+              )}
+              </div>
+      
             <Typography variant="subtitle1">
               <span
                 style={{
@@ -47,11 +44,14 @@ function StepThree() {
                 האצבע עד לחשיפה מלאה
               </span>
             </Typography>
-          </div>
+        
         </Grid>
       </Grid>
       {/* styles */}
       <style jsx>{`
+      .scratch-saction {
+        
+      }
         .container {
           background: url("images/yellow-bg.png");
           background-size: cover;

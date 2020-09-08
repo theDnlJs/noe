@@ -10,7 +10,7 @@ function GameScreen() {
     const step = useSelector(state => state.game.step);
     switch (step) {
         case 0:
-            return <StepOne/>
+            return <StepThree/>
         case 1:
             return <StepTwo/>
         case 2: 
