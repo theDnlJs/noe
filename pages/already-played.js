@@ -2,19 +2,21 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
-
+import Appbar from "../components/Appbar";
 function alreadPlayed() {
   return (
     <Fade in timeout={500}>
       <div className="container">
         <div className="overlay">
+          <div style={{ position: "absolute", top: 0 }}>
+            <Appbar />
+          </div>
           <div>
             <Typography variant="h2">
               <span
                 style={{
                   color: "#ffd700",
                   fontWeight: "700",
-                
                 }}
               >
                 אהלן גבר!
@@ -45,7 +47,6 @@ function alreadPlayed() {
                 style={{
                   color: "white",
                   fontWeight: "300",
-                
                 }}
               >
                 אבל אל תדאג,
