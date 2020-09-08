@@ -112,7 +112,7 @@ function LeadForm() {
               {" "}
               אני מסכים{" "}
               <span>
-                <a style={{ color: "black" }} href="" target="_blank">
+                <a style={{ color: "black" }} href="/takanon.pdf" target="_blank">
                   לתקנון הפעילות
                 </a>
               </span>
