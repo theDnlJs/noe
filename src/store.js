@@ -7,5 +7,5 @@ export default configureStore({
   reducer: {
     game: gameSlice,
   },
-  devTools: true,
+  devTools: false,
 });
