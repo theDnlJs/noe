@@ -24,19 +24,19 @@ export default function Home() {
           תמונה אשלח בראשון`,
           images: [
             {
-              url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg',
+              url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t1.0-9/86730992_1285660681630634_2632808467047383040_n.jpg?_nc_cat=102&_nc_sid=09cbfe&_nc_ohc=jQEvcGzH6XQAX9rpq4I&_nc_ht=scontent.ftlv2-1.fna&oh=70b9b075489de0a861e3fb065757c9c0&oe=5F7C643F',
               width: 800,
               height: 600,
               alt: 'Og Image Alt',
             },
             {
-              url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg',
+              url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t1.0-9/86730992_1285660681630634_2632808467047383040_n.jpg?_nc_cat=102&_nc_sid=09cbfe&_nc_ohc=jQEvcGzH6XQAX9rpq4I&_nc_ht=scontent.ftlv2-1.fna&oh=70b9b075489de0a861e3fb065757c9c0&oe=5F7C643F',
               width: 900,
               height: 800,
               alt: 'Og Image Alt Second',
             },
-            { url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg' },
-            { url: 'https://mainstreamen.com/image/catalog/באנרים/NEW BR 10.7.jpg' },
+            { url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t1.0-9/86730992_1285660681630634_2632808467047383040_n.jpg?_nc_cat=102&_nc_sid=09cbfe&_nc_ohc=jQEvcGzH6XQAX9rpq4I&_nc_ht=scontent.ftlv2-1.fna&oh=70b9b075489de0a861e3fb065757c9c0&oe=5F7C643F' },
+            { url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t1.0-9/86730992_1285660681630634_2632808467047383040_n.jpg?_nc_cat=102&_nc_sid=09cbfe&_nc_ohc=jQEvcGzH6XQAX9rpq4I&_nc_ht=scontent.ftlv2-1.fna&oh=70b9b075489de0a861e3fb065757c9c0&oe=5F7C643F' },
           ],
         }}
       />

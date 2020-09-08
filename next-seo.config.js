@@ -1,22 +1,22 @@
 export default {
     openGraph: {
       type: 'website',
-      locale: 'en_IE',
+      locale: 'he_IL',
       site_name: 'mainstream',
     },
     twitter: {
       handle: '@handle',
       site: '@site',
-      cardType: 'summary_large_image',
+      cardType: 'app',
     },
     facebook: {
         handle: '@handle',
         site: '@site',
-        cardType: 'summary_large_image',
+        cardType: 'app',
       },
       whatsapp: {
         handle: '@handle',
         site: '@site',
-        cardType: 'summary_large_image',
+        cardType: 'app',
       },
   }
