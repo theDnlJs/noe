@@ -124,10 +124,6 @@ const columns = [
       </>
     );
   }
-  const completed = data?.allLeads?.filter((item) => {
-    console.log(item);
-    item.compoleted === true;
-  });
   return (
     <>
       <h4
@@ -148,9 +144,6 @@ const columns = [
           justifyContent: "center",
         }}
       >
-        מספר המשתתפים שלא ממישמו {"  "}
-        {data && completed.length}
-        {"  "}
       </h4>
 
       <AdminAppBar />
