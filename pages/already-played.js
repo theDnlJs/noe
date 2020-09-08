@@ -7,10 +7,9 @@ function alreadPlayed() {
   return (
     <Fade in timeout={500}>
       <div className="container">
-        <div className="overlay">
-          <div style={{ position: "absolute", top: 0 }}>
             <Appbar />
-          </div>
+        <div className="overlay">
+        
           <div>
             <Typography variant="h2">
               <span
