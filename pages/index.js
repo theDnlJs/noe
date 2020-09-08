@@ -16,7 +16,7 @@ export default function Home() {
         title="מגרדים וזוכים במיינסטרים"
         description="הפעילות שמשגעת את העיר, מותג האופנה מיינסטרים מחלק לכם הטבות ומתנות למימוש בחנות
         תמונה אשלח בראשון"
-        canonical="https://www.mainstreamen.com/"
+        canonical="https://mainstream.ada.graphics/"
         openGraph={{
           url: 'https://www.mainstreamen.com/',
           title: 'מגרדים וזוכים במיינסטרים',

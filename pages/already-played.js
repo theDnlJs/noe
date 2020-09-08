@@ -59,7 +59,7 @@ function alreadPlayed() {
         </div>
         <Grid container>
           <Grid item xs={12}>
-            <img className="hand-img" src="images/hand.png" />
+            <img className="hand-img" alt="azahen" src="images/hand.png" />
           </Grid>
         </Grid>
         {/* styles */}

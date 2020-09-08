@@ -41,7 +41,7 @@ function ScratchTicket() {
     >
       <Confetti run={completed} width={width} height={height} />
       <ScratchCard style={{ position:'static' }} {...settings}>
-        {prizeOwn && <img style={{ width: "320px" }} src={prizeOwn.imgUrl} />}
+        {prizeOwn && <img  alt="azahen" style={{ width: "320px" }} src={prizeOwn.imgUrl} />}
       </ScratchCard>
     </div>
   );

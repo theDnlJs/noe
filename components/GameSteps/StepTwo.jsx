@@ -92,7 +92,7 @@ function StepTwo() {
 
         <Grid container>
           <Grid item xs={12}>
-            <img style={{ width: '100vw', height: '100vh' }} src="images/bg1.png" />
+            <img alt="azahen" style={{ width: '100vw', height: '100vh' }} src="images/bg1.png" />
           </Grid>
         </Grid>
         {/* styles */}

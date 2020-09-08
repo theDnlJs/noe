@@ -244,7 +244,7 @@ const Form = ({
           {loading ? (
             <h3>רגע אחי, טוען...</h3>
           ) : (
-            <img style={{ width: "100%" }} src={images} />
+            <img  alt="azahen" style={{ width: "100%" }} src={images} />
           )}
           {/* {errors.prizeImageUrl ? (
             <span className="error-message">יש להזין שם מלא</span>

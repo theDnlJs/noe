@@ -185,7 +185,7 @@ function PrizeForm({ id, name, desc, imgUrl, chances, quantity }) {
           {loading ? (
             <h3>רגע אחי, טוען...</h3>
           ) : (
-            <img style={{ width: "320px" }} src={images} />
+            <img  alt="azahen" style={{ width: "320px" }} src={images} />
           )}
           {/* {errors.prizeImageUrl ? (
             <span className="error-message">יש להזין שם מלא</span>

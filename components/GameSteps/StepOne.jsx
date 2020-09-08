@@ -45,7 +45,7 @@ function FirstScreen() {
             animationOut="headShake"
             isVisible={true}
             >
-              <img className="hand-img" src="images/hand.png" />
+              <img alt="azahen" className="hand-img" src="images/hand.png" />
             </Animated>
             </div>
           </Grid>
@@ -58,7 +58,7 @@ function FirstScreen() {
               animationOut="fadeInUpBig"
               isVisible={true}
             >
-            <img className="concept-logo" src="images/concept-logo.png" />
+            <img  alt="azahen" className="concept-logo" src="images/concept-logo.png" />
             </Animated>
             <Animated
             animationInDuration={1500}
