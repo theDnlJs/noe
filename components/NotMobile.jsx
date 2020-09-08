@@ -1,11 +1,12 @@
 import Grid from "@material-ui/core/Grid";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
-
+import Appbar from "./Appbar";
 function NotMobile() {
   return (
     <Fade in timeout={500}>
       <div className="container">
+          <Appbar />
         <div className="overlay">
           <div>
             <Typography variant="h2">
@@ -25,14 +26,12 @@ function NotMobile() {
               </span>
             </Typography>
             <br />
-           
+
             <br />
             <br />
           </div>
         </div>
-        <Grid container>
-        
-        </Grid>
+        <Grid container></Grid>
         {/* styles */}
         <style jsx>{`
           h1 {
