@@ -44,7 +44,6 @@ function StepThree() {
                 האצבע עד לחשיפה מלאה
               </span>
             </Typography>
-        
         </Grid>
       </Grid>
       {/* styles */}
