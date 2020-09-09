@@ -57,6 +57,7 @@ function StepThree() {
           min-height: 100vh;
           width: 100%;
           padding: 0;
+          position: fixed;
         }
         .concept {
           display: flex;
