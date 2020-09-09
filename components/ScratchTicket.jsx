@@ -22,7 +22,7 @@ function ScratchTicket() {
     image: "images/scratch.png",
     finishPercent: 33,
     onComplete: () => {
-      track("Lead-Fill-Form");
+      track("Lead-Submotted-Sms-Sent");
       dispatch(finalAction({ leadPlayed, prizeOwn }));
       setCompleted(true);
       setTimeout(() => {
