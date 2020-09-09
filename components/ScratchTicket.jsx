@@ -5,6 +5,9 @@ import { finalAction } from "../lib/slices/gameSlice";
 import { useRouter } from "next/router";
 import { useWindowSize } from "../src/hooks/useWindowSize";
 import Confetti from "react-confetti";
+import { init, track } from "fbq";
+const pixel = "546570832766228"; // https://facebook.com/business/help/742478679120153
+init(pixel);
 
 function ScratchTicket() {
   const [completed, setCompleted] = useState(false);
@@ -19,6 +22,7 @@ function ScratchTicket() {
     image: "images/scratch.png",
     finishPercent: 33,
     onComplete: () => {
+      track("Lead-Fill-Form");
       dispatch(finalAction({ leadPlayed, prizeOwn }));
       setCompleted(true);
       setTimeout(() => {
@@ -36,12 +40,13 @@ function ScratchTicket() {
         alignContent: "center",
         marginTop: "1vh",
         textAlign: "right",
-     
       }}
     >
       <Confetti run={completed} width={width} height={height} />
-      <ScratchCard style={{ position:'static' }} {...settings}>
-        {prizeOwn && <img  alt="azahen" style={{ width: "320px" }} src={prizeOwn.imgUrl} />}
+      <ScratchCard style={{ position: "static" }} {...settings}>
+        {prizeOwn && (
+          <img alt="azahen" style={{ width: "320px" }} src={prizeOwn.imgUrl} />
+        )}
       </ScratchCard>
     </div>
   );

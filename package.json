@@ -16,6 +16,7 @@
     "clsx": "^1.1.1",
     "cookie": "^0.4.1",
     "faunadb": "^3.0.1",
+    "fbq": "^0.1.4",
     "firebase": "^7.17.0",
     "firebase-admin": "^9.1.1",
     "form-data": "^3.0.0",

@@ -11,6 +11,11 @@ import { useForm } from "react-hook-form";
 import { increment, setLeadState } from "../lib/slices/gameSlice";
 import { useState } from "react";
 
+import { init, track } from 'fbq'
+const pixel = '546570832766228' // https://facebook.com/business/help/742478679120153
+init(pixel)
+
+
 function LeadForm() {
   const router = useRouter()
   const { register, handleSubmit, watch, errors } = useForm();
@@ -18,6 +23,7 @@ function LeadForm() {
   const [checked, setChecked] = React.useState(true);
   const [fetching, setfetching] = useState(false)
   const onSubmit = async (data) => {
+    track('Lead-Fill-Form')
     try {
       setfetching(true)
       await axios.post('/api/check', data)
