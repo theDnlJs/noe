@@ -24,19 +24,19 @@ export default function Home() {
           תמונה אשלח בראשון`,
           images: [
             {
-              url: 'https://mainstream.ada.graphics/images/scratch-layer.png',
+              url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p526x296/119053582_6202639613369_3640154217371159675_n.png.jpg?_nc_cat=106&_nc_sid=67cdda&_nc_ohc=lOb2kDr02UAAX8C1X-x&_nc_ht=scontent.ftlv2-1.fna&oh=6383d470f2ea0cd56e9c02bbaf382be6&oe=5F802FA5',
               width: 800,
               height: 600,
               alt: 'Og Image Alt',
             },
             {
-              url: 'https://mainstream.ada.graphics/images/scratch-layer.png',
+              url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p526x296/119053582_6202639613369_3640154217371159675_n.png.jpg?_nc_cat=106&_nc_sid=67cdda&_nc_ohc=lOb2kDr02UAAX8C1X-x&_nc_ht=scontent.ftlv2-1.fna&oh=6383d470f2ea0cd56e9c02bbaf382be6&oe=5F802FA5',
               width: 900,
               height: 800,
               alt: 'Og Image Alt Second',
             },
-            { url: 'https://mainstream.ada.graphics/images/scratch-layer.png' },
-            { url: 'https://mainstream.ada.graphics/images/scratch-layer.png' },
+            { url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p526x296/119053582_6202639613369_3640154217371159675_n.png.jpg?_nc_cat=106&_nc_sid=67cdda&_nc_ohc=lOb2kDr02UAAX8C1X-x&_nc_ht=scontent.ftlv2-1.fna&oh=6383d470f2ea0cd56e9c02bbaf382be6&oe=5F802FA5' },
+            { url: 'https://scontent.ftlv2-1.fna.fbcdn.net/v/t45.1600-4/cp0/q90/spS444/p526x296/119053582_6202639613369_3640154217371159675_n.png.jpg?_nc_cat=106&_nc_sid=67cdda&_nc_ohc=lOb2kDr02UAAX8C1X-x&_nc_ht=scontent.ftlv2-1.fna&oh=6383d470f2ea0cd56e9c02bbaf382be6&oe=5F802FA5' },
           ],
         }}
       />
