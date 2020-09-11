@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     case "GET":
       try {
         const toss = Math.floor(Math.random() * 10000) + 1;
-        const Allprizes = await Prize.find({ quantity: { $gte: 8 } });
+        const Allprizes = await Prize.find({ quantity: { $gte: 0 } });
         console.log(Allprizes);
         const shaffled = Allprizes.filter((item) => {
           if (toss > 9500) {
