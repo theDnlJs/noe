@@ -14,7 +14,7 @@ export default async function handler(req, res) {
             return item.chances === 1;
           }
           if (toss > 9000) {
-            return item.chances === 500
+            return item.chances === 50
           } else {
             return item.chances === 100;
           }
